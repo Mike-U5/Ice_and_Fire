@@ -14,7 +14,6 @@ import com.github.alexthe666.iceandfire.block.BlockMyrmexConnectedResin;
 import com.github.alexthe666.iceandfire.block.BlockMyrmexResin;
 import com.github.alexthe666.iceandfire.config.BiomeConfig;
 import com.github.alexthe666.iceandfire.entity.util.MyrmexHive;
-import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
 import com.github.alexthe666.iceandfire.misc.IafTagRegistry;
 import com.github.alexthe666.iceandfire.pathfinding.raycoms.DragonAdvancedPathNavigate;
@@ -431,13 +430,7 @@ public abstract class EntityMyrmexBase extends AnimalEntity implements IAnimated
         if (!shouldHaveNormalAI()) {
             return ActionResultType.PASS;
         }
-        boolean flag2 = itemstack.getItem() == IafItemRegistry.MYRMEX_JUNGLE_STAFF || itemstack.getItem() == IafItemRegistry.MYRMEX_DESERT_STAFF;
 
-        if (flag2) {
-            this.onStaffInteract(player, itemstack);
-            player.swingArm(hand);
-            return ActionResultType.SUCCESS;
-        }
         boolean flag = itemstack.getItem() == Items.NAME_TAG || itemstack.getItem() == Items.LEAD;
         if (flag) {
             return super.func_230254_b_(player, hand);

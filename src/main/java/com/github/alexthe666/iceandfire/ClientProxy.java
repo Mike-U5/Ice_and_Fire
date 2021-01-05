@@ -10,8 +10,6 @@ import com.github.alexthe666.citadel.client.model.TabulaModel;
 import com.github.alexthe666.citadel.client.model.TabulaModelHandler;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.client.IafKeybindRegistry;
-import com.github.alexthe666.iceandfire.client.gui.GuiMyrmexAddRoom;
-import com.github.alexthe666.iceandfire.client.gui.GuiMyrmexStaff;
 import com.github.alexthe666.iceandfire.client.gui.IafGuiRegistry;
 import com.github.alexthe666.iceandfire.client.gui.bestiary.GuiBestiary;
 import com.github.alexthe666.iceandfire.client.model.ModelCopperArmor;
@@ -120,11 +118,13 @@ import net.minecraft.client.util.InputMappings;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.IItemPropertyGetter;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemModelsProperties;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
@@ -418,18 +418,6 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void openBestiaryGui(ItemStack book) {
         Minecraft.getInstance().displayGuiScreen(new GuiBestiary(book));
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void openMyrmexStaffGui(ItemStack staff) {
-        Minecraft.getInstance().displayGuiScreen(new GuiMyrmexStaff(staff));
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void openMyrmexAddRoomGui(ItemStack staff, BlockPos pos, Direction facing) {
-        Minecraft.getInstance().displayGuiScreen(new GuiMyrmexAddRoom(staff, pos, facing));
     }
 
     @OnlyIn(Dist.CLIENT)

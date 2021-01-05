@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire.client.model.animator;
 import com.github.alexthe666.citadel.client.model.AdvancedModelBox;
 import com.github.alexthe666.citadel.client.model.ITabulaModelAnimator;
 import com.github.alexthe666.citadel.client.model.TabulaModel;
-import com.github.alexthe666.citadel.server.entity.EntityPropertiesHandler;
 import com.github.alexthe666.iceandfire.client.model.util.EnumSeaSerpentAnimations;
 import com.github.alexthe666.iceandfire.entity.EntitySeaSerpent;
 

@@ -1,4 +1,6 @@
 package com.github.alexthe666.iceandfire.pathfinding.raycoms.pathjobs;
+import javax.annotation.Nullable;
+
 /*
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
@@ -9,8 +11,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
 
 /**
  * Job that handles moving away from something.

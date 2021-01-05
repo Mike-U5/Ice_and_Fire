@@ -1,4 +1,9 @@
 package com.github.alexthe666.iceandfire.pathfinding.raycoms;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+import javax.annotation.Nullable;
+
 /*
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
@@ -27,10 +32,6 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.lighting.WorldLightManager;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import javax.annotation.Nullable;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
 
 public class ChunkCache implements IWorldReader
 {

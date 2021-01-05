@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import javax.annotation.Nullable;
 
-import com.github.alexthe666.citadel.server.entity.EntityPropertiesHandler;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.entity.EntityStoneStatue;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;

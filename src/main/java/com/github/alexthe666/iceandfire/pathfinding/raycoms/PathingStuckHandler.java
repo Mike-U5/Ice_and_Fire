@@ -1,4 +1,8 @@
 package com.github.alexthe666.iceandfire.pathfinding.raycoms;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 /*
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
@@ -12,10 +16,6 @@ import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
 /**
  * Stuck handler for pathing

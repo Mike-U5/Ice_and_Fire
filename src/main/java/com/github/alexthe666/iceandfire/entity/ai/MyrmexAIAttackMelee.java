@@ -1,14 +1,15 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
+import java.util.EnumSet;
+
 import com.github.alexthe666.iceandfire.entity.EntityMyrmexBase;
 import com.github.alexthe666.iceandfire.pathfinding.raycoms.DragonAdvancedPathNavigate;
 import com.github.alexthe666.iceandfire.pathfinding.raycoms.PathResult;
+
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
-
-import java.util.EnumSet;
 
 public class MyrmexAIAttackMelee extends Goal {
     protected EntityMyrmexBase myrmex;

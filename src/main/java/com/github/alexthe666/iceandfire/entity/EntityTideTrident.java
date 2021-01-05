@@ -1,5 +1,7 @@
 package com.github.alexthe666.iceandfire.entity;
 
+import java.lang.reflect.Field;
+
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -19,12 +21,9 @@ import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.network.NetworkHooks;
-
-import java.lang.reflect.Field;
 
 public class EntityTideTrident extends TridentEntity {
 

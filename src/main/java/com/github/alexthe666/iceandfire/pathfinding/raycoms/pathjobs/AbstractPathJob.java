@@ -3,11 +3,64 @@ package com.github.alexthe666.iceandfire.pathfinding.raycoms.pathjobs;
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
 
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.BLOCKPOS_DOWN;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.BLOCKPOS_EAST;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.BLOCKPOS_IDENTITY;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.BLOCKPOS_NORTH;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.BLOCKPOS_SOUTH;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.BLOCKPOS_UP;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.BLOCKPOS_WEST;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.HALF_A_BLOCK;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.MAX_Y;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.MIN_Y;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.ONE_SIDE;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.OTHER_SIDE;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.SHIFT_X_BY;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.SHIFT_Y_BY;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.debugNodeMonitor;
+
+import java.lang.ref.WeakReference;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Set;
+import java.util.concurrent.Callable;
+
+import javax.annotation.Nullable;
+
 import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.IceAndFire;
-import com.github.alexthe666.iceandfire.pathfinding.raycoms.*;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.ChunkCache;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.IPassabilityNavigator;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.Node;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.PathPointExtended;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.PathResult;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.Pathfinding;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.PathingOptions;
 
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBannerBlock;
+import net.minecraft.block.AbstractRailBlock;
+import net.minecraft.block.AbstractSignBlock;
+import net.minecraft.block.BambooBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.CampfireBlock;
+import net.minecraft.block.CarpetBlock;
+import net.minecraft.block.DoorBlock;
+import net.minecraft.block.FenceBlock;
+import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.FireBlock;
+import net.minecraft.block.LadderBlock;
+import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.block.SnowBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.block.TrapDoorBlock;
+import net.minecraft.block.VineBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.fluid.FluidState;
@@ -22,13 +75,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
-import java.lang.ref.WeakReference;
-import java.util.*;
-import java.util.concurrent.Callable;
-
-import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.*;
 
 /**
  * Abstract class for Jobs that run in the multithreaded path finder.

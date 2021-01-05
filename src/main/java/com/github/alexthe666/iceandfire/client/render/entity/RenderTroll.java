@@ -6,9 +6,7 @@ import com.github.alexthe666.iceandfire.client.render.entity.layer.LayerTrollWea
 import com.github.alexthe666.iceandfire.entity.EntityTroll;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
-import net.minecraft.client.renderer.entity.LivingRenderer;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

@@ -1,4 +1,8 @@
 package com.github.alexthe666.iceandfire.pathfinding.raycoms;
+import java.util.concurrent.Future;
+
+import javax.annotation.Nullable;
+
 /*
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
@@ -8,9 +12,6 @@ import net.minecraft.pathfinding.GroundPathNavigator;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
-import java.util.concurrent.Future;
 
 public abstract class AbstractAdvancedPathNavigate extends GroundPathNavigator {
     //  Parent class private members

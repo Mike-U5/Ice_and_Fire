@@ -4,7 +4,6 @@ import com.github.alexthe666.citadel.client.model.AdvancedModelBox;
 import com.github.alexthe666.iceandfire.client.model.ModelHydraBody;
 import com.github.alexthe666.iceandfire.client.model.ModelHydraHead;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderHydra;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.EntityHydra;
 import com.mojang.blaze3d.matrix.MatrixStack;
 

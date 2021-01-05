@@ -722,9 +722,6 @@ public class GuiBestiary extends Screen {
                     drawItemStack(ms, new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_RESIN), 55, 64, 2F);
                 }
                 if (bookPages == 4) {
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.MYRMEX_DESERT_STAFF), 25, 73, 2F);
-                    drawItemStack(ms, new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_STAFF), 55, 73, 2F);
-
                     drawItemStack(ms, new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG), 125, 90, 2F);
                     drawItemStack(ms, new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG), 155, 90, 2F);
                 }

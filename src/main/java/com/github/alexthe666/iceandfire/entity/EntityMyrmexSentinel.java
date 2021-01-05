@@ -3,9 +3,15 @@ package com.github.alexthe666.iceandfire.entity;
 import javax.annotation.Nullable;
 
 import com.github.alexthe666.citadel.animation.Animation;
-import com.github.alexthe666.citadel.server.entity.EntityPropertiesHandler;
 import com.github.alexthe666.iceandfire.IafConfig;
-import com.github.alexthe666.iceandfire.entity.ai.*;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAIAttackMelee;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAIAttackPlayers;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAIDefendHive;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAIFindHidingSpot;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAILeaveHive;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAILookAtTradePlayer;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAITradePlayer;
+import com.github.alexthe666.iceandfire.entity.ai.MyrmexAIWander;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 import com.github.alexthe666.iceandfire.entity.util.MyrmexTrades;
 import com.google.common.base.Predicate;

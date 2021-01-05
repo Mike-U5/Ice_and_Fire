@@ -10,9 +10,7 @@ import com.github.alexthe666.iceandfire.pathfinding.raycoms.DragonAdvancedPathNa
 import com.github.alexthe666.iceandfire.pathfinding.raycoms.PathResult;
 import com.github.alexthe666.iceandfire.world.MyrmexWorldData;
 
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.pathfinding.Path;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 

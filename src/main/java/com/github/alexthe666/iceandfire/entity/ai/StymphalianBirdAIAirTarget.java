@@ -1,6 +1,5 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
-import com.github.alexthe666.citadel.server.entity.EntityPropertiesHandler;
 import com.github.alexthe666.iceandfire.entity.EntityStymphalianBird;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 

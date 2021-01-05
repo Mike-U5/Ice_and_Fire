@@ -1,11 +1,19 @@
 package com.github.alexthe666.iceandfire.pathfinding.raycoms;
+import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
+
+import javax.annotation.Nullable;
+
 /*
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.pathfinding.NodeProcessorDragonFly;
 import com.github.alexthe666.iceandfire.pathfinding.NodeProcessorDragonWalk;
-import com.github.alexthe666.iceandfire.pathfinding.raycoms.pathjobs.*;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.pathjobs.AbstractPathJob;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.pathjobs.PathJobMoveAwayFromLocation;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.pathjobs.PathJobMoveToLocation;
+import com.github.alexthe666.iceandfire.pathfinding.raycoms.pathjobs.PathJobRandomPos;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.MobEntity;
@@ -18,10 +26,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
-import java.util.Arrays;
-import java.util.concurrent.ExecutionException;
 
 /**
  * Minecolonies async PathNavigate.

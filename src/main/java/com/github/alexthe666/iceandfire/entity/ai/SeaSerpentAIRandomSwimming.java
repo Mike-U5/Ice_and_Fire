@@ -1,18 +1,16 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
+import java.util.Random;
+
+import javax.annotation.Nullable;
+
 import com.github.alexthe666.iceandfire.entity.EntitySeaSerpent;
-import net.minecraft.block.Blocks;
+
 import net.minecraft.entity.CreatureEntity;
-import net.minecraft.entity.ai.RandomPositionGenerator;
-import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
-import net.minecraft.pathfinding.PathType;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
-
-import javax.annotation.Nullable;
-import java.util.Random;
 
 public class SeaSerpentAIRandomSwimming  extends RandomWalkingGoal {
     public SeaSerpentAIRandomSwimming(CreatureEntity creature, double speed, int chance) {

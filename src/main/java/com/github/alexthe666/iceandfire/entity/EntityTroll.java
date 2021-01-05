@@ -15,8 +15,8 @@ import com.github.alexthe666.iceandfire.entity.util.IHumanoid;
 import com.github.alexthe666.iceandfire.entity.util.IVillagerFear;
 import com.github.alexthe666.iceandfire.enums.EnumTroll;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
-
 import com.github.alexthe666.iceandfire.world.IafWorldRegistry;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;

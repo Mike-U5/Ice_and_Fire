@@ -1,15 +1,15 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
+import java.util.EnumSet;
+import java.util.Random;
+
 import com.github.alexthe666.iceandfire.entity.EntityPixie;
+
 import net.minecraft.entity.ai.goal.Goal;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceContext;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
-
-
-import java.util.EnumSet;
-import java.util.Random;
 
 public class PixieAIMoveRandom extends Goal {
     BlockPos target;

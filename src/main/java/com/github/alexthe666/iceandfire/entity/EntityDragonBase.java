@@ -49,7 +49,6 @@ import com.github.alexthe666.iceandfire.message.MessageDragonControl;
 import com.github.alexthe666.iceandfire.message.MessageDragonSetBurnBlock;
 import com.github.alexthe666.iceandfire.message.MessageStartRidingMob;
 import com.github.alexthe666.iceandfire.misc.IafSoundRegistry;
-import com.github.alexthe666.iceandfire.pathfinding.PathNavigateFlyingCreature;
 import com.github.alexthe666.iceandfire.pathfinding.raycoms.DragonAdvancedPathNavigate;
 import com.github.alexthe666.iceandfire.pathfinding.raycoms.IPassabilityNavigator;
 import com.github.alexthe666.iceandfire.world.DragonPosWorldData;

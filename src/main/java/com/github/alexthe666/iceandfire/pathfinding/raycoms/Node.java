@@ -1,10 +1,10 @@
 package com.github.alexthe666.iceandfire.pathfinding.raycoms;
+import javax.annotation.Nullable;
+
 /*
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
 import net.minecraft.util.math.BlockPos;
-
-import javax.annotation.Nullable;
 
 /**
  * Nodes used in pathfinding.

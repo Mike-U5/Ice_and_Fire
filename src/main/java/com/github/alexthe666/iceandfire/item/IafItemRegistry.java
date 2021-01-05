@@ -257,8 +257,6 @@ public class IafItemRegistry {
     public static final Item MYRMEX_JUNGLE_PICKAXE = new ItemModPickaxe(MYRMEX_CHITIN_TOOL_MATERIAL, "myrmex_jungle_pickaxe");
     public static final Item MYRMEX_JUNGLE_AXE = new ItemModAxe(MYRMEX_CHITIN_TOOL_MATERIAL, "myrmex_jungle_axe");
     public static final Item MYRMEX_JUNGLE_HOE = new ItemModHoe(MYRMEX_CHITIN_TOOL_MATERIAL, "myrmex_jungle_hoe");
-    public static final Item MYRMEX_DESERT_STAFF = new ItemMyrmexStaff(false);
-    public static final Item MYRMEX_JUNGLE_STAFF = new ItemMyrmexStaff(true);
     public static final Item MYRMEX_DESERT_HELMET = new ItemModArmor(MYRMEX_DESERT_ARMOR_MATERIAL, EquipmentSlotType.HEAD, "myrmex_desert_helmet");
     public static final Item MYRMEX_DESERT_CHESTPLATE = new ItemModArmor(MYRMEX_DESERT_ARMOR_MATERIAL, EquipmentSlotType.CHEST, "myrmex_desert_chestplate");
     public static final Item MYRMEX_DESERT_LEGGINGS = new ItemModArmor(MYRMEX_DESERT_ARMOR_MATERIAL, EquipmentSlotType.LEGS, "myrmex_desert_leggings");

@@ -1,4 +1,17 @@
 package com.github.alexthe666.iceandfire.pathfinding.raycoms;
+import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.debugNodeMonitor;
+
+import java.util.ConcurrentModificationException;
+import java.util.Set;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Future;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+import org.lwjgl.opengl.GL11;
+
 /*
     All of this code is used with permission from Raycoms, one of the developers of the minecolonies project.
  */
@@ -22,13 +35,6 @@ import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import org.lwjgl.opengl.GL11;
-
-import java.util.ConcurrentModificationException;
-import java.util.Set;
-import java.util.concurrent.*;
-
-import static com.github.alexthe666.iceandfire.pathfinding.raycoms.PathfindingConstants.debugNodeMonitor;
 
 /**
  * Static class the handles all the Pathfinding.

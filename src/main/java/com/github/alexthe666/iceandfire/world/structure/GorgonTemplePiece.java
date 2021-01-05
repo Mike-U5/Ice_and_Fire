@@ -6,10 +6,8 @@ import java.util.Random;
 import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.alexthe666.iceandfire.world.IafWorldRegistry;
-
 import com.github.alexthe666.iceandfire.world.gen.processor.GorgonTempleProcessor;
-import com.github.alexthe666.iceandfire.world.gen.processor.GraveyardProcessor;
-import net.minecraft.block.BlockState;
+
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.nbt.CompoundNBT;
@@ -17,14 +15,8 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
-import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IServerWorld;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.gen.feature.structure.IStructurePieceType;
-import net.minecraft.world.gen.feature.structure.StructureManager;
 import net.minecraft.world.gen.feature.structure.StructurePiece;
 import net.minecraft.world.gen.feature.structure.TemplateStructurePiece;
 import net.minecraft.world.gen.feature.template.PlacementSettings;

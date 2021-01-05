@@ -2,7 +2,6 @@ package com.github.alexthe666.iceandfire.entity.ai;
 
 import java.util.Random;
 
-import com.github.alexthe666.citadel.server.entity.EntityPropertiesHandler;
 import com.github.alexthe666.iceandfire.entity.EntityHippogryph;
 import com.github.alexthe666.iceandfire.entity.util.DragonUtils;
 

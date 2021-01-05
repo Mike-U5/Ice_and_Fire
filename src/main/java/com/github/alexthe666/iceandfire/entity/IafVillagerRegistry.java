@@ -1,5 +1,9 @@
 package com.github.alexthe666.iceandfire.entity;
 
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
+
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
@@ -7,34 +11,31 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
+
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import it.unimi.dsi.fastutil.objects.Object2IntLinkedOpenHashMap;
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import net.minecraft.entity.ai.brain.task.GiveHeroGiftsTask;
 import net.minecraft.entity.merchant.villager.VillagerProfession;
 import net.minecraft.entity.merchant.villager.VillagerTrades;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.MerchantOffer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.village.PointOfInterestType;
-import net.minecraft.world.gen.feature.Features;
-import net.minecraft.world.gen.feature.jigsaw.*;
-import net.minecraft.world.gen.feature.structure.*;
+import net.minecraft.world.gen.feature.jigsaw.JigsawPattern;
+import net.minecraft.world.gen.feature.jigsaw.JigsawPatternRegistry;
+import net.minecraft.world.gen.feature.jigsaw.JigsawPiece;
+import net.minecraft.world.gen.feature.jigsaw.LegacySingleJigsawPiece;
+import net.minecraft.world.gen.feature.structure.DesertVillagePools;
+import net.minecraft.world.gen.feature.structure.PlainsVillagePools;
+import net.minecraft.world.gen.feature.structure.SavannaVillagePools;
+import net.minecraft.world.gen.feature.structure.SnowyVillagePools;
+import net.minecraft.world.gen.feature.structure.TaigaVillagePools;
 import net.minecraft.world.gen.feature.template.ProcessorLists;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @Mod.EventBusSubscriber(modid = IceAndFire.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class IafVillagerRegistry {

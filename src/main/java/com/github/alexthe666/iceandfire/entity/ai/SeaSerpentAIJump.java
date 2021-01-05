@@ -1,6 +1,7 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
 import com.github.alexthe666.iceandfire.entity.EntitySeaSerpent;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.goal.JumpGoal;
 import net.minecraft.fluid.FluidState;

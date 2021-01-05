@@ -2,7 +2,6 @@ package com.github.alexthe666.iceandfire.pathfinding;
 
 import java.util.stream.Collectors;
 
-import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.entity.EntityCyclops;
 
 import net.minecraft.entity.Entity;

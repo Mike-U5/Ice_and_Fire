@@ -1,11 +1,12 @@
 package com.github.alexthe666.iceandfire.entity.ai;
 
-import com.github.alexthe666.iceandfire.entity.EntityPixie;
-import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.util.math.BlockPos;
-
 import java.util.EnumSet;
 import java.util.Random;
+
+import com.github.alexthe666.iceandfire.entity.EntityPixie;
+
+import net.minecraft.entity.ai.goal.Goal;
+import net.minecraft.util.math.BlockPos;
 
 public class PixieAIEnterHouse extends Goal {
 

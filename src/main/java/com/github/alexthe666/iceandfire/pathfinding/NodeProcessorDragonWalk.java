@@ -1,7 +1,6 @@
 package com.github.alexthe666.iceandfire.pathfinding;
 
 import net.minecraft.entity.MobEntity;
-import net.minecraft.pathfinding.FlyingNodeProcessor;
 import net.minecraft.pathfinding.WalkNodeProcessor;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Region;

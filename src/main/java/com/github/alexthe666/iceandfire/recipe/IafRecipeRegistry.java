@@ -24,17 +24,14 @@ import net.minecraft.dispenser.IPosition;
 import net.minecraft.dispenser.ProjectileDispenseBehavior;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.potion.Potions;
-
 import net.minecraft.tileentity.BannerPattern;
 import net.minecraft.world.World;
-
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 
 public class IafRecipeRegistry {

@@ -11,7 +11,6 @@ import com.github.alexthe666.citadel.client.model.TabulaModelHandler;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.client.IafKeybindRegistry;
 import com.github.alexthe666.iceandfire.client.gui.IafGuiRegistry;
-import com.github.alexthe666.iceandfire.client.gui.bestiary.GuiBestiary;
 import com.github.alexthe666.iceandfire.client.model.ModelCopperArmor;
 import com.github.alexthe666.iceandfire.client.model.ModelDeathWormArmor;
 import com.github.alexthe666.iceandfire.client.model.ModelDragonsteelFireArmor;
@@ -412,12 +411,6 @@ public class ClientProxy extends CommonProxy {
         if (particle != null) {
             Minecraft.getInstance().particles.addEffect(particle);
         }
-    }
-
-    @OnlyIn(Dist.CLIENT)
-    @Override
-    public void openBestiaryGui(ItemStack book) {
-        Minecraft.getInstance().displayGuiScreen(new GuiBestiary(book));
     }
 
     @OnlyIn(Dist.CLIENT)

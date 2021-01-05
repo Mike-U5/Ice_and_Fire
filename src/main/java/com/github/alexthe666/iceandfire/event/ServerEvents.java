@@ -815,35 +815,6 @@ public class ServerEvents {
 
     @SubscribeEvent
     public void onChestGenerated(LootTableLoadEvent event) {
-        if (event.getName().equals(LootTables.CHESTS_SIMPLE_DUNGEON) || event.getName().equals(LootTables.CHESTS_ABANDONED_MINESHAFT)
-                || event.getName().equals(LootTables.CHESTS_DESERT_PYRAMID) || event.getName().equals(LootTables.CHESTS_JUNGLE_TEMPLE)
-                || event.getName().equals(LootTables.CHESTS_STRONGHOLD_CORRIDOR) || event.getName().equals(LootTables.CHESTS_STRONGHOLD_CROSSING)
-                || event.getName().equals(LootTables.CHESTS_VILLAGE_VILLAGE_CARTOGRAPHER)) {
-
-            LootEntry.Builder item = ItemLootEntry.builder(IafItemRegistry.MANUSCRIPT).quality(20).weight(5);
-            LootPool.Builder builder = new LootPool.Builder().name("iaf_manuscript").addEntry(item).acceptCondition(RandomChance.builder(0.35f)).rolls(new RandomValueRange(1, 4)).bonusRolls(0, 3);
-            event.getTable().addPool(builder.build());
-        }
-        if (IafConfig.generateSilverOre && (event.getName().equals(LootTables.CHESTS_SIMPLE_DUNGEON) || event.getName().equals(LootTables.CHESTS_ABANDONED_MINESHAFT)
-                || event.getName().equals(LootTables.CHESTS_DESERT_PYRAMID) || event.getName().equals(LootTables.CHESTS_JUNGLE_TEMPLE)
-                || event.getName().equals(LootTables.CHESTS_STRONGHOLD_CORRIDOR) || event.getName().equals(LootTables.CHESTS_STRONGHOLD_CROSSING)
-                || event.getName().equals(LootTables.CHESTS_IGLOO_CHEST) || event.getName().equals(LootTables.CHESTS_WOODLAND_MANSION)
-                || event.getName().equals(LootTables.CHESTS_VILLAGE_VILLAGE_TOOLSMITH) || event.getName().equals(LootTables.CHESTS_VILLAGE_VILLAGE_ARMORER))) {
-            LootEntry.Builder item = ItemLootEntry.builder(IafItemRegistry.SILVER_INGOT).quality(15).weight(12);
-            LootPool.Builder builder = new LootPool.Builder().name("iaf_silver_ingot").addEntry(item).acceptCondition(RandomChance.builder(0.5f)).rolls(new RandomValueRange(1, 3)).bonusRolls(0, 2);
-            event.getTable().addPool(builder.build());
-
-        }
-        if (IafConfig.generateCopperOre && (event.getName().equals(LootTables.CHESTS_SIMPLE_DUNGEON) || event.getName().equals(LootTables.CHESTS_ABANDONED_MINESHAFT)
-                || event.getName().equals(LootTables.CHESTS_DESERT_PYRAMID) || event.getName().equals(LootTables.CHESTS_JUNGLE_TEMPLE)
-                || event.getName().equals(LootTables.CHESTS_STRONGHOLD_CORRIDOR) || event.getName().equals(LootTables.CHESTS_STRONGHOLD_CROSSING)
-                || event.getName().equals(LootTables.CHESTS_IGLOO_CHEST) || event.getName().equals(LootTables.CHESTS_WOODLAND_MANSION)
-                || event.getName().equals(LootTables.CHESTS_VILLAGE_VILLAGE_TOOLSMITH) || event.getName().equals(LootTables.CHESTS_VILLAGE_VILLAGE_ARMORER))) {
-            LootEntry.Builder item = ItemLootEntry.builder(IafItemRegistry.COPPER_INGOT).quality(10).weight(14);
-            LootPool.Builder builder = new LootPool.Builder().name("iaf_copper_ingot").addEntry(item).acceptCondition(RandomChance.builder(0.6f)).rolls(new RandomValueRange(1, 2)).bonusRolls(0, 3);
-            event.getTable().addPool(builder.build());
-
-        }
         if ((event.getName().equals(WorldGenFireDragonCave.FIREDRAGON_CHEST)
                 || event.getName().equals(WorldGenFireDragonCave.FIREDRAGON_MALE_CHEST)
                 || event.getName().equals(WorldGenIceDragonCave.ICEDRAGON_CHEST)

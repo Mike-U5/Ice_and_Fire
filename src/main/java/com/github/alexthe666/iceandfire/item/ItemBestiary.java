@@ -53,15 +53,6 @@ public class ItemBestiary extends Item {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        ItemStack itemStackIn = playerIn.getHeldItem(handIn);
-        if (worldIn.isRemote) {
-            IceAndFire.PROXY.openBestiaryGui(itemStackIn);
-        }
-        return new ActionResult<ItemStack>(ActionResultType.PASS, itemStackIn);
-    }
-
-    @Override
     public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         if (stack.getTag() == null) {
             stack.setTag(new CompoundNBT());

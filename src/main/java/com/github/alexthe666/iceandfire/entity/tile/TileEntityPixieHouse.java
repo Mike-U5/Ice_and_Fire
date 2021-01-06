@@ -5,9 +5,6 @@ import java.util.UUID;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
-import com.github.alexthe666.iceandfire.entity.EntityPixie;
-import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
-import com.github.alexthe666.iceandfire.message.MessageUpdatePixieHouse;
 import com.github.alexthe666.iceandfire.message.MessageUpdatePixieHouseModel;
 
 import net.minecraft.block.Block;
@@ -19,7 +16,6 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
 
 public class TileEntityPixieHouse extends TileEntity implements ITickableTileEntity {
@@ -111,26 +107,9 @@ public class TileEntityPixieHouse extends TileEntity implements ITickableTileEnt
         if (!world.isRemote && this.hasPixie && new Random().nextInt(100) == 0) {
             releasePixie();
         }
-        if (this.world.isRemote && this.hasPixie) {
-            IceAndFire.PROXY.spawnParticle("if_pixie", this.pos.getX() + 0.5F + (double) (this.rand.nextFloat() * PARTICLE_WIDTH * 2F) - (double) PARTICLE_WIDTH, this.pos.getY() + (double) (this.rand.nextFloat() * PARTICLE_HEIGHT), this.pos.getZ() + 0.5F + (double) (this.rand.nextFloat() * PARTICLE_WIDTH * 2F) - (double) PARTICLE_WIDTH, EntityPixie.PARTICLE_RGB[this.pixieType][0], EntityPixie.PARTICLE_RGB[this.pixieType][1], EntityPixie.PARTICLE_RGB[this.pixieType][2]);
-        }
     }
 
     public void releasePixie() {
-        EntityPixie pixie = new EntityPixie(IafEntityRegistry.PIXIE, this.world);
-        pixie.setPositionAndRotation(this.pos.getX() + 0.5F, this.pos.getY() + 1F, this.pos.getZ() + 0.5F, new Random().nextInt(360), 0);
-        pixie.setHeldItem(Hand.MAIN_HAND, pixieItems.get(0));
-        pixie.setColor(this.pixieType);
-        if (!world.isRemote) {
-            world.addEntity(pixie);
-        }
-        this.hasPixie = false;
-        this.pixieType = 0;
-        pixie.ticksUntilHouseAI = 500;
-        pixie.setTamed(this.tamedPixie);
-        pixie.setOwnerId(this.pixieOwnerUUID);
-        if (!world.isRemote) {
-            IceAndFire.sendMSGToAll(new MessageUpdatePixieHouse(pos.toLong(), false, 0));
-        }
+
     }
 }

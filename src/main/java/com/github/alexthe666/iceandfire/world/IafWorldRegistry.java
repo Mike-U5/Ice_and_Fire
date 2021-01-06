@@ -24,7 +24,6 @@ import com.github.alexthe666.iceandfire.world.gen.WorldGenIceDragonRoosts;
 import com.github.alexthe666.iceandfire.world.gen.WorldGenLightningDragonCave;
 import com.github.alexthe666.iceandfire.world.gen.WorldGenLightningDragonRoosts;
 import com.github.alexthe666.iceandfire.world.gen.WorldGenMyrmexHive;
-import com.github.alexthe666.iceandfire.world.gen.WorldGenPixieVillage;
 import com.github.alexthe666.iceandfire.world.gen.WorldGenSirenIsland;
 import com.github.alexthe666.iceandfire.world.structure.DreadMausoleumStructure;
 import com.github.alexthe666.iceandfire.world.structure.GorgonTemplePiece;
@@ -74,7 +73,6 @@ public class IafWorldRegistry {
     public static Feature<NoFeatureConfig> ICE_DRAGON_CAVE;
     public static Feature<NoFeatureConfig> LIGHTNING_DRAGON_CAVE;
     public static Feature<NoFeatureConfig> CYCLOPS_CAVE;
-    public static Feature<NoFeatureConfig> PIXIE_VILLAGE;
     public static Feature<NoFeatureConfig> SIREN_ISLAND;
     public static Feature<NoFeatureConfig> HYDRA_CAVE;
     public static Feature<NoFeatureConfig> MYRMEX_HIVE_DESERT;
@@ -107,7 +105,6 @@ public class IafWorldRegistry {
     public static ConfiguredFeature ICE_DRAGON_CAVE_CF;
     public static ConfiguredFeature LIGHTNING_DRAGON_CAVE_CF;
     public static ConfiguredFeature CYCLOPS_CAVE_CF;
-    public static ConfiguredFeature PIXIE_VILLAGE_CF;
     public static ConfiguredFeature SIREN_ISLAND_CF;
     public static ConfiguredFeature HYDRA_CAVE_CF;
     public static ConfiguredFeature MYRMEX_HIVE_DESERT_CF;
@@ -134,7 +131,6 @@ public class IafWorldRegistry {
         ICE_DRAGON_CAVE = registerFeature("iceandfire:ice_dragon_cave", new WorldGenIceDragonCave(NoFeatureConfig.field_236558_a_));
         LIGHTNING_DRAGON_CAVE = registerFeature("iceandfire:lightning_dragon_cave", new WorldGenLightningDragonCave(NoFeatureConfig.field_236558_a_));
         CYCLOPS_CAVE = registerFeature("iceandfire:cyclops_cave", new WorldGenCyclopsCave(NoFeatureConfig.field_236558_a_));
-        PIXIE_VILLAGE = registerFeature("iceandfire:pixie_village", new WorldGenPixieVillage(NoFeatureConfig.field_236558_a_));
         SIREN_ISLAND = registerFeature("iceandfire:siren_island", new WorldGenSirenIsland(NoFeatureConfig.field_236558_a_));
         HYDRA_CAVE = registerFeature("iceandfire:hydra_cave", new WorldGenHydraCave(NoFeatureConfig.field_236558_a_));
         MYRMEX_HIVE_DESERT = registerFeature("iceandfire:myrmex_hive_desert", new WorldGenMyrmexHive(false, false, NoFeatureConfig.field_236558_a_));
@@ -185,7 +181,6 @@ public class IafWorldRegistry {
         ICE_DRAGON_CAVE_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:ice_dragon_cave", ICE_DRAGON_CAVE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         LIGHTNING_DRAGON_CAVE_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:lightning_dragon_cave", LIGHTNING_DRAGON_CAVE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         CYCLOPS_CAVE_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:cyclops_cave", CYCLOPS_CAVE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-        PIXIE_VILLAGE_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:pixie_village", PIXIE_VILLAGE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         SIREN_ISLAND_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:siren_island", SIREN_ISLAND.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         HYDRA_CAVE_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:hydra_cave", HYDRA_CAVE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         MYRMEX_HIVE_DESERT_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:myrmex_hive_desert", MYRMEX_HIVE_DESERT.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
@@ -323,7 +318,6 @@ public class IafWorldRegistry {
     	LOADED_FEATURES.put("ICE_DRAGON_CAVE_CF", false);
     	LOADED_FEATURES.put("LIGHTNING_DRAGON_CAVE_CF", false);
     	LOADED_FEATURES.put("CYCLOPS_CAVE_CF", false);
-    	LOADED_FEATURES.put("PIXIE_VILLAGE_CF", false);
     	LOADED_FEATURES.put("SIREN_ISLAND_CF", false);
     	LOADED_FEATURES.put("HYDRA_CAVE_CF", false);
     	LOADED_FEATURES.put("MYRMEX_HIVE_DESERT_CF", false);
@@ -400,9 +394,6 @@ public class IafWorldRegistry {
         if (IafConfig.spawnGorgons && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.gorgonTempleBiomes, biome)) {
             event.getGeneration().func_242516_a(GORGON_TEMPLE_CF);
         	LOADED_FEATURES.put("GORGON_TEMPLE_CF", true);
-        }
-        if (IafConfig.spawnPixies && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.pixieBiomes, biome)) {
-            event.getGeneration().func_242513_a(GenerationStage.Decoration.SURFACE_STRUCTURES, PIXIE_VILLAGE_CF);
         }
         if (IafConfig.generateHydraCaves && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.hydraBiomes, biome)) {
             event.getGeneration().func_242513_a(GenerationStage.Decoration.SURFACE_STRUCTURES, HYDRA_CAVE_CF);

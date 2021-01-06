@@ -26,7 +26,6 @@ public class IceAndFireTEISR extends ItemStackTileEntityRenderer {
     private RenderDreadPortal renderDreadPortal = new RenderDreadPortal(TileEntityRendererDispatcher.instance);
     private RenderGorgonHead renderGorgonHead = new RenderGorgonHead(true);
     private RenderGorgonHead renderGorgonHeadDead = new RenderGorgonHead(false);
-    private RenderPixieHouse renderPixieHouse = new RenderPixieHouse(TileEntityRendererDispatcher.instance);
     private TileEntityDreadPortal dreadPortalDummy = new TileEntityDreadPortal();
     private RenderGhostChest renderGhostChest = new RenderGhostChest(TileEntityRendererDispatcher.instance);
     private TileEntityGhostChest ghostChestDummy = new TileEntityGhostChest();
@@ -46,10 +45,6 @@ public class IceAndFireTEISR extends ItemStackTileEntityRenderer {
         }
         if (itemStackIn.getItem() instanceof BlockItem && ((BlockItem) itemStackIn.getItem()).getBlock() == IafBlockRegistry.DREAD_PORTAL) {
             renderDreadPortal.render(dreadPortalDummy, 0, matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn);
-        }
-        if (itemStackIn.getItem() instanceof BlockItem && ((BlockItem) itemStackIn.getItem()).getBlock() instanceof BlockPixieHouse) {
-            renderPixieHouse.metaOverride = (BlockItem) itemStackIn.getItem();
-            renderPixieHouse.render(null, 0, matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn);
         }
     }
 }

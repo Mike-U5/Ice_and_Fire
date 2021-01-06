@@ -60,33 +60,6 @@ public class ItemSummoningCrystal extends Item {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 
-        boolean flag = false;
-        String desc = "entity.firedragon.name";
-        if(stack.getItem() == IafItemRegistry.SUMMONING_CRYSTAL_ICE){
-            desc = "entity.icedragon.name";
-        }
-        if(stack.getItem() == IafItemRegistry.SUMMONING_CRYSTAL_LIGHTNING){
-            desc = "entity.lightningdragon.name";
-        }
-        if (stack.getTag() != null) {
-            for (String tagInfo : stack.getTag().keySet()) {
-                if (tagInfo.contains("Dragon")) {
-                    CompoundNBT draginTag = stack.getTag().getCompound(tagInfo);
-                    String dragonName = new TranslationTextComponent(desc ).getUnformattedComponentText();
-                    if (!draginTag.getString("CustomName").isEmpty()) {
-                        dragonName = draginTag.getString("CustomName");
-                    }
-                    tooltip.add(new TranslationTextComponent("item.iceandfire.summoning_crystal.bound", dragonName).func_240699_a_(TextFormatting.GRAY));
-                    flag = true;
-                }
-            }
-        }
-        if (!flag) {
-            tooltip.add(new TranslationTextComponent("item.iceandfire.summoning_crystal.desc_0").func_240699_a_(TextFormatting.GRAY));
-            tooltip.add(new TranslationTextComponent("item.iceandfire.summoning_crystal.desc_1").func_240699_a_(TextFormatting.GRAY));
-
-        }
-
     }
 
     public ActionResultType onItemUse(ItemUseContext context) {

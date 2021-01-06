@@ -41,11 +41,7 @@ public class ItemGeneric extends Item {
     }
 
     public boolean hasEffect(ItemStack stack) {
-        if (this == IafItemRegistry.CREATIVE_DRAGON_MEAL) {
-            return true;
-        } else {
-            return super.hasEffect(stack);
-        }
+    	return super.hasEffect(stack);
     }
 
     @Override

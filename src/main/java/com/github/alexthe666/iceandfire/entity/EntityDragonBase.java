@@ -1083,21 +1083,6 @@ public abstract class EntityDragonBase extends TameableEntity implements IPassab
             return ActionResultType.SUCCESS;
         }
         if (!this.isModelDead()) {
-            if (stack.getItem() == IafItemRegistry.CREATIVE_DRAGON_MEAL) {
-                this.setTamed(true);
-                this.setTamedBy(player);
-                this.setHunger(this.getHunger() + 20);
-                this.heal(Math.min(this.getHealth(), (int) (this.getMaxHealth() / 2)));
-                this.playSound(SoundEvents.ENTITY_GENERIC_EAT, this.getSoundVolume(), this.getSoundPitch());
-                this.spawnItemCrackParticles(stack.getItem());
-                this.spawnItemCrackParticles(Items.BONE);
-                this.spawnItemCrackParticles(Items.BONE_MEAL);
-                this.eatFoodBonus(stack);
-                if (!player.isCreative()) {
-                    stack.shrink(1);
-                }
-                return ActionResultType.SUCCESS;
-            }
             if (this.isBreedingItem(stack) && this.isAdult()) {
                 this.setGrowingAge(0);
                 this.consumeItemFromStack(player, stack);
@@ -1123,9 +1108,6 @@ public abstract class EntityDragonBase extends TameableEntity implements IPassab
                     return ActionResultType.SUCCESS;
                 }
                 this.setTamedBy(player);
-                if (stack.getItem() == IafItemRegistry.DRAGON_HORN) {
-                    return super.func_230254_b_(player, hand);
-                }
                 if (stack.isEmpty() && !player.isSneaking()) {
                     if (!world.isRemote) {
                         if (this.getDragonStage() < 2) {
@@ -1158,68 +1140,6 @@ public abstract class EntityDragonBase extends TameableEntity implements IPassab
                             stack.shrink(1);
                         }
                         return ActionResultType.SUCCESS;
-                    }
-                    if (stack.getItem() == IafItemRegistry.DRAGON_MEAL) {
-                        this.growDragon(1);
-                        this.setHunger(this.getHunger() + 20);
-                        this.heal(Math.min(this.getHealth(), (int) (this.getMaxHealth() / 2)));
-                        this.playSound(SoundEvents.ENTITY_GENERIC_EAT, this.getSoundVolume(), this.getSoundPitch());
-                        this.spawnItemCrackParticles(stack.getItem());
-                        this.spawnItemCrackParticles(Items.BONE);
-                        this.spawnItemCrackParticles(Items.BONE_MEAL);
-                        this.eatFoodBonus(stack);
-                        if (!player.isCreative()) {
-                            stack.shrink(1);
-                        }
-                        return ActionResultType.SUCCESS;
-                    }
-                    if (stack.getItem() == IafItemRegistry.SICKLY_DRAGON_MEAL && !this.isAgingDisabled()) {
-                        this.setHunger(this.getHunger() + 20);
-                        this.heal(this.getMaxHealth());
-                        this.playSound(SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, this.getSoundVolume(), this.getSoundPitch());
-                        this.spawnItemCrackParticles(stack.getItem());
-                        this.spawnItemCrackParticles(Items.BONE);
-                        this.spawnItemCrackParticles(Items.BONE_MEAL);
-                        this.spawnItemCrackParticles(Items.POISONOUS_POTATO);
-                        this.spawnItemCrackParticles(Items.POISONOUS_POTATO);
-                        this.setAgingDisabled(true);
-                        this.eatFoodBonus(stack);
-                        if (!player.isCreative()) {
-                            stack.shrink(1);
-                        }
-                        return ActionResultType.SUCCESS;
-                    }
-                    if (stack.getItem() == IafItemRegistry.DRAGON_STAFF) {
-                        if (player.isSneaking()) {
-                            if (this.hasHomePosition) {
-                                this.hasHomePosition = false;
-                                player.sendStatusMessage(new TranslationTextComponent("dragon.command.remove_home"), true);
-                                return ActionResultType.SUCCESS;
-                            } else {
-                                BlockPos pos = this.func_233580_cy_();
-                                this.homePos = pos;
-                                this.hasHomePosition = true;
-                                player.sendStatusMessage(new TranslationTextComponent("dragon.command.new_home", homePos.getX(), homePos.getY(), homePos.getZ()), true);
-                                return ActionResultType.SUCCESS;
-                            }
-                        } else {
-                            this.playSound(SoundEvents.ENTITY_ZOMBIE_INFECT, this.getSoundVolume(), this.getSoundPitch());
-                            if (!world.isRemote) {
-                                this.setCommand(this.getCommand() + 1);
-                                if (this.getCommand() > 2) {
-                                    this.setCommand(0);
-                                }
-                            }
-                            String commandText = "stand";
-                            if (this.getCommand() == 1) {
-                                commandText = "sit";
-                            }
-                            if (this.getCommand() == 2) {
-                                commandText = "escort";
-                            }
-                            player.sendStatusMessage(new TranslationTextComponent("dragon.command." + commandText), true);
-                            return ActionResultType.SUCCESS;
-                        }
                     }
                 }
             }

@@ -591,7 +591,7 @@ public class EntityIceDragon extends EntityDragonBase {
 
     @Override
     public Item getSummoningCrystal() {
-        return IafItemRegistry.SUMMONING_CRYSTAL_ICE;
+        return null;
     }
 
     @Override

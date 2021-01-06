@@ -26,7 +26,6 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = IceAndFire.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class IafItemRegistry {
-
 	public static CustomArmorMaterial BLINDFOLD_ARMOR_MATERIAL = new IafArmorMaterial("blindfold", 5, new int[]{1, 1, 1, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
     public static CustomArmorMaterial SHEEP_ARMOR_MATERIAL = new IafArmorMaterial("sheep", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
     public static CustomArmorMaterial MYRMEX_DESERT_ARMOR_MATERIAL = new IafArmorMaterial("myrmexdesert", 20, new int[]{3, 5, 8, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
@@ -41,9 +40,7 @@ public class IafItemRegistry {
     public static CustomArmorMaterial DRAGONSTEEL_FIRE_ARMOR_MATERIAL = new DragonsteelArmorMaterial("dragonsteel fire", (int) (0.02D * IafConfig.dragonsteelBaseDurability), new int[]{IafConfig.dragonsteelBaseArmor - 6, IafConfig.dragonsteelBaseArmor - 3, IafConfig.dragonsteelBaseArmor, IafConfig.dragonsteelBaseArmor - 5}, 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 6.0F);
     public static CustomArmorMaterial DRAGONSTEEL_ICE_ARMOR_MATERIAL = new DragonsteelArmorMaterial("dragonsteel_ice", (int) (0.02D * IafConfig.dragonsteelBaseDurability), new int[]{IafConfig.dragonsteelBaseArmor - 6, IafConfig.dragonsteelBaseArmor - 3, IafConfig.dragonsteelBaseArmor, IafConfig.dragonsteelBaseArmor - 5}, 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 6.0F);
     public static CustomArmorMaterial DRAGONSTEEL_LIGHTNING_ARMOR_MATERIAL = new DragonsteelArmorMaterial("dragonsteel_lightning", (int) (0.02D * IafConfig.dragonsteelBaseDurability), new int[]{IafConfig.dragonsteelBaseArmor - 6, IafConfig.dragonsteelBaseArmor - 3, IafConfig.dragonsteelBaseArmor, IafConfig.dragonsteelBaseArmor - 5}, 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 6.0F);
-    public static CustomToolMaterial SILVER_TOOL_MATERIAL = new CustomToolMaterial("silver", 2, 460, 1.0F, 11.0F, 18);
-    public static CustomToolMaterial COPPER_TOOL_MATERIAL = new CustomToolMaterial("copper", 2, 300, 0.0F, 0.7F, 10);
-    public static CustomToolMaterial DRAGONBONE_TOOL_MATERIAL = new CustomToolMaterial("Dragonbone", 4, 1660, 4.0F, 10.0F, 22);
+    public static CustomToolMaterial DRAGONBONE_TOOL_MATERIAL = new CustomToolMaterial("Dragonbone", 3, 1660, 2.5F, 7.0F, 14);
     public static CustomToolMaterial FIRE_DRAGONBONE_TOOL_MATERIAL = new CustomToolMaterial("FireDragonbone", 4, 2000, 5.5F, 10F, 22);
     public static CustomToolMaterial ICE_DRAGONBONE_TOOL_MATERIAL = new CustomToolMaterial("IceDragonbone", 4, 2000, 5.5F, 10F, 22);
     public static CustomToolMaterial LIGHTNING_DRAGONBONE_TOOL_MATERIAL = new CustomToolMaterial("LightningDragonbone", 4, 2000, 5.5F, 10F, 22);
@@ -146,9 +143,6 @@ public class IafItemRegistry {
     public static final ItemDragonArmor DRAGONARMOR_DRAGONSTEEL_LIGHTNING_1 = new ItemDragonArmor(7, 1, "dragonarmor_dragonsteel_lightning");
     public static final ItemDragonArmor DRAGONARMOR_DRAGONSTEEL_LIGHTNING_2 = new ItemDragonArmor(7, 2, "dragonarmor_dragonsteel_lightning");
     public static final ItemDragonArmor DRAGONARMOR_DRAGONSTEEL_LIGHTNING_3 = new ItemDragonArmor(7, 3, "dragonarmor_dragonsteel_lightning");
-    public static final Item DRAGON_MEAL = new ItemGeneric("dragon_meal");
-    public static final Item SICKLY_DRAGON_MEAL = new ItemGeneric("sickly_dragon_meal", 1);
-    public static final Item CREATIVE_DRAGON_MEAL = new ItemGeneric("creative_dragon_meal", 2);
     public static final Item FIRE_DRAGON_FLESH = new ItemDragonFlesh(0);
     public static final Item ICE_DRAGON_FLESH = new ItemDragonFlesh(1);
     public static final Item LIGHTNING_DRAGON_FLESH = new ItemDragonFlesh(2);
@@ -158,12 +152,7 @@ public class IafItemRegistry {
     public static final Item FIRE_DRAGON_BLOOD = new ItemGeneric("fire_dragon_blood");
     public static final Item ICE_DRAGON_BLOOD = new ItemGeneric("ice_dragon_blood");
     public static final Item LIGHTNING_DRAGON_BLOOD = new ItemGeneric("lightning_dragon_blood");
-    public static final Item DRAGON_STAFF = new ItemDragonStaff();
-    public static final Item DRAGON_HORN = new ItemDragonHorn();
     public static final Item DRAGON_FLUTE = new ItemDragonFlute();
-    public static final Item SUMMONING_CRYSTAL_FIRE = new ItemSummoningCrystal("fire");
-    public static final Item SUMMONING_CRYSTAL_ICE = new ItemSummoningCrystal("ice");
-    public static final Item SUMMONING_CRYSTAL_LIGHTNING = new ItemSummoningCrystal("lightning");
     public static final Item HIPPOGRYPH_EGG = new ItemHippogryphEgg();
     public static final Item IRON_HIPPOGRYPH_ARMOR = new ItemGeneric("iron_hippogryph_armor", 0, 1);
     public static final Item GOLD_HIPPOGRYPH_ARMOR = new ItemGeneric("gold_hippogryph_armor", 0, 1);

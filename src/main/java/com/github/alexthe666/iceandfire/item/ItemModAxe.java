@@ -40,11 +40,6 @@ public class ItemModAxe extends AxeItem {
 
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (toolMaterial == IafItemRegistry.SILVER_TOOL_MATERIAL) {
-            if (target.getCreatureAttribute() == CreatureAttribute.UNDEAD) {
-                target.attackEntityFrom(DamageSource.MAGIC, func_234675_d_() + 3.0F);
-            }
-        }
         if (this.toolMaterial == IafItemRegistry.MYRMEX_CHITIN_TOOL_MATERIAL) {
             if (target.getCreatureAttribute() != CreatureAttribute.ARTHROPOD) {
                 target.attackEntityFrom(DamageSource.GENERIC, func_234675_d_() + 5.0F);

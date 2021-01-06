@@ -176,7 +176,7 @@ public class EntityLightningDragon extends EntityDragonBase {
 
     @Override
     public Item getSummoningCrystal() {
-        return IafItemRegistry.SUMMONING_CRYSTAL_LIGHTNING;
+        return null;
     }
 
     public boolean canBeSteered() {

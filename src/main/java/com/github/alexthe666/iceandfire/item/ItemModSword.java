@@ -39,11 +39,6 @@ public class ItemModSword extends SwordItem {
 
     @Override
     public boolean hitEntity(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (toolMaterial == IafItemRegistry.SILVER_TOOL_MATERIAL) {
-            if (target.getCreatureAttribute() == CreatureAttribute.UNDEAD) {
-                target.attackEntityFrom(DamageSource.MAGIC, this.getAttackDamage() + 3);
-            }
-        }
         if (this.toolMaterial == IafItemRegistry.MYRMEX_CHITIN_TOOL_MATERIAL) {
             if (target.getCreatureAttribute() != CreatureAttribute.ARTHROPOD) {
                 target.attackEntityFrom(DamageSource.GENERIC, this.getAttackDamage() + 5F);
@@ -86,9 +81,6 @@ public class ItemModSword extends SwordItem {
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
-        if (toolMaterial == IafItemRegistry.SILVER_TOOL_MATERIAL) {
-            tooltip.add(new TranslationTextComponent("silvertools.hurt").func_240699_a_(TextFormatting.GREEN));
-        }
         if (toolMaterial == IafItemRegistry.MYRMEX_CHITIN_TOOL_MATERIAL) {
             tooltip.add(new TranslationTextComponent("myrmextools.hurt").func_240699_a_(TextFormatting.GREEN));
         }

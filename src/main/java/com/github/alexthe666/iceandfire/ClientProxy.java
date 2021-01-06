@@ -97,8 +97,6 @@ import com.github.alexthe666.iceandfire.event.ClientEvents;
 import com.github.alexthe666.iceandfire.event.PlayerRenderEvents;
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.github.alexthe666.iceandfire.item.ItemDragonBow;
-import com.github.alexthe666.iceandfire.item.ItemDragonHorn;
-import com.github.alexthe666.iceandfire.item.ItemSummoningCrystal;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -310,24 +308,11 @@ public class ClientProxy extends CommonProxy {
             if (entity == null) {
                 return 0.0F;
             } else {
-                ItemDragonBow item = ((ItemDragonBow) stack.getItem());
                 return entity.getActiveItemStack() != stack ? 0.0F : (stack.getUseDuration() - entity.getItemInUseCount()) / 20.0F;
             }
         };
         ItemModelsProperties.func_239418_a_(IafItemRegistry.DRAGON_BOW.asItem(), new ResourceLocation("pulling"), pulling);
         ItemModelsProperties.func_239418_a_(IafItemRegistry.DRAGON_BOW.asItem(), new ResourceLocation("pull"), pull);
-        ItemModelsProperties.func_239418_a_(IafItemRegistry.DRAGON_HORN, new ResourceLocation("iceorfire"), (p_239428_0_, p_239428_1_, p_239428_2_) -> {
-            return ItemDragonHorn.getDragonType(p_239428_0_) * 0.25F;
-        });
-        ItemModelsProperties.func_239418_a_(IafItemRegistry.SUMMONING_CRYSTAL_FIRE, new ResourceLocation("has_dragon"), (stack, p_239428_1_, p_239428_2_) -> {
-            return ItemSummoningCrystal.hasDragon(stack) ? 1.0F : 0.0F;
-        });
-        ItemModelsProperties.func_239418_a_(IafItemRegistry.SUMMONING_CRYSTAL_ICE, new ResourceLocation("has_dragon"), (stack, p_239428_1_, p_239428_2_) -> {
-            return ItemSummoningCrystal.hasDragon(stack) ? 1.0F : 0.0F;
-        });
-        ItemModelsProperties.func_239418_a_(IafItemRegistry.SUMMONING_CRYSTAL_LIGHTNING, new ResourceLocation("has_dragon"), (stack, p_239428_1_, p_239428_2_) -> {
-            return ItemSummoningCrystal.hasDragon(stack) ? 1.0F : 0.0F;
-        });
     }
 
     @OnlyIn(Dist.CLIENT)

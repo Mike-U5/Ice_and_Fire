@@ -71,10 +71,6 @@ public class IafItemRegistry {
     public static final Item AMYTHEST_GEM = new ItemGeneric("amythest_gem");
     public static final Item COPPER_INGOT = new ItemGeneric("copper_ingot");
     public static final Item COPPER_NUGGET = new ItemGeneric("copper_nugget");
-    public static final Item SILVER_HELMET = new ItemSilverArmor(SILVER_ARMOR_MATERIAL, EquipmentSlotType.HEAD, "armor_silver_metal_helmet");
-    public static final Item SILVER_CHESTPLATE = new ItemSilverArmor(SILVER_ARMOR_MATERIAL, EquipmentSlotType.CHEST, "armor_silver_metal_chestplate");
-    public static final Item SILVER_LEGGINGS = new ItemSilverArmor(SILVER_ARMOR_MATERIAL, EquipmentSlotType.LEGS, "armor_silver_metal_leggings");
-    public static final Item SILVER_BOOTS = new ItemSilverArmor(SILVER_ARMOR_MATERIAL, EquipmentSlotType.FEET, "armor_silver_metal_boots");
     public static final Item SILVER_SWORD = new ItemModSword(SILVER_TOOL_MATERIAL, "silver_sword");
     public static final Item SILVER_SHOVEL = new ItemModShovel(SILVER_TOOL_MATERIAL, "silver_shovel");
     public static final Item SILVER_PICKAXE = new ItemModPickaxe(SILVER_TOOL_MATERIAL, "silver_pickaxe");

@@ -2,7 +2,6 @@ package com.github.alexthe666.iceandfire.message;
 
 import java.util.function.Supplier;
 
-import com.github.alexthe666.iceandfire.entity.EntityHippocampus;
 import com.github.alexthe666.iceandfire.entity.EntityHippogryph;
 
 import net.minecraft.entity.Entity;
@@ -47,18 +46,6 @@ public class MessageHippogryphArmor {
                     Entity entity = player.world.getEntityByID(message.dragonId);
                     if (entity != null && entity instanceof EntityHippogryph) {
                         EntityHippogryph hippo = (EntityHippogryph) entity;
-                        if (message.slot_index == 0) {
-                            hippo.setSaddled(message.armor_type == 1);
-                        }
-                        if (message.slot_index == 1) {
-                            hippo.setChested(message.armor_type == 1);
-                        }
-                        if (message.slot_index == 2) {
-                            hippo.setArmor(message.armor_type);
-                        }
-                    }
-                    if (entity != null && entity instanceof EntityHippocampus) {
-                        EntityHippocampus hippo = (EntityHippocampus) entity;
                         if (message.slot_index == 0) {
                             hippo.setSaddled(message.armor_type == 1);
                         }

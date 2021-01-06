@@ -11,7 +11,6 @@ public class IafGuiRegistry {
         ScreenManager.registerFactory(IafContainerRegistry.PODIUM_CONTAINER, GuiPodium::new);
         ScreenManager.registerFactory(IafContainerRegistry.DRAGON_CONTAINER, GuiDragon::new);
         ScreenManager.registerFactory(IafContainerRegistry.HIPPOGRYPH_CONTAINER, GuiHippogryph::new);
-        ScreenManager.registerFactory(IafContainerRegistry.HIPPOCAMPUS_CONTAINER, GuiHippocampus::new);
         ScreenManager.registerFactory(IafContainerRegistry.DRAGON_FORGE_CONTAINER, GuiDragonForge::new);
     }
 }

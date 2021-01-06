@@ -12,7 +12,6 @@ import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.alexthe666.iceandfire.util.IAFBiomeUtil;
 import com.github.alexthe666.iceandfire.world.feature.SpawnDeathWorm;
 import com.github.alexthe666.iceandfire.world.feature.SpawnDragonSkeleton;
-import com.github.alexthe666.iceandfire.world.feature.SpawnHippocampus;
 import com.github.alexthe666.iceandfire.world.feature.SpawnSeaSerpent;
 import com.github.alexthe666.iceandfire.world.feature.SpawnStymphalianBird;
 import com.github.alexthe666.iceandfire.world.feature.SpawnWanderingCyclops;
@@ -84,7 +83,6 @@ public class IafWorldRegistry {
     public static Feature<NoFeatureConfig> SPAWN_DRAGON_SKELETON_L;
     public static Feature<NoFeatureConfig> SPAWN_DRAGON_SKELETON_F;
     public static Feature<NoFeatureConfig> SPAWN_DRAGON_SKELETON_I;
-    public static Feature<NoFeatureConfig> SPAWN_HIPPOCAMPUS;
     public static Feature<NoFeatureConfig> SPAWN_SEA_SERPENT;
     public static Feature<NoFeatureConfig> SPAWN_STYMPHALIAN_BIRD;
     public static Feature<NoFeatureConfig> SPAWN_WANDERING_CYCLOPS;
@@ -118,7 +116,6 @@ public class IafWorldRegistry {
     public static ConfiguredFeature SPAWN_DRAGON_SKELETON_L_CF;
     public static ConfiguredFeature SPAWN_DRAGON_SKELETON_F_CF;
     public static ConfiguredFeature SPAWN_DRAGON_SKELETON_I_CF;
-    public static ConfiguredFeature SPAWN_HIPPOCAMPUS_CF;
     public static ConfiguredFeature SPAWN_SEA_SERPENT_CF;
     public static ConfiguredFeature SPAWN_STYMPHALIAN_BIRD_CF;
     public static ConfiguredFeature SPAWN_WANDERING_CYCLOPS_CF;
@@ -147,7 +144,6 @@ public class IafWorldRegistry {
         SPAWN_DRAGON_SKELETON_L = registerFeature("iceandfire:spawn_dragon_skeleton_l", new SpawnDragonSkeleton(IafEntityRegistry.LIGHTNING_DRAGON, NoFeatureConfig.field_236558_a_));
         SPAWN_DRAGON_SKELETON_F = registerFeature("iceandfire:spawn_dragon_skeleton_f", new SpawnDragonSkeleton(IafEntityRegistry.FIRE_DRAGON, NoFeatureConfig.field_236558_a_));
         SPAWN_DRAGON_SKELETON_I = registerFeature("iceandfire:spawn_dragon_skeleton_i", new SpawnDragonSkeleton(IafEntityRegistry.ICE_DRAGON, NoFeatureConfig.field_236558_a_));
-        SPAWN_HIPPOCAMPUS = registerFeature("iceandfire:spawn_hippocampus", new SpawnHippocampus(NoFeatureConfig.field_236558_a_));
         SPAWN_SEA_SERPENT = registerFeature("iceandfire:spawn_sea_serpent", new SpawnSeaSerpent(NoFeatureConfig.field_236558_a_));
         SPAWN_STYMPHALIAN_BIRD = registerFeature("iceandfire:spawn_stymphalian_bird", new SpawnStymphalianBird(NoFeatureConfig.field_236558_a_));
         SPAWN_WANDERING_CYCLOPS = registerFeature("iceandfire:spawn_wandering_cyclops", new SpawnWanderingCyclops(NoFeatureConfig.field_236558_a_));
@@ -199,7 +195,6 @@ public class IafWorldRegistry {
         SPAWN_DRAGON_SKELETON_L_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:spawn_dragon_skeleton_l_misc", SPAWN_DRAGON_SKELETON_L.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         SPAWN_DRAGON_SKELETON_F_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:spawn_dragon_skeleton_f_misc", SPAWN_DRAGON_SKELETON_F.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         SPAWN_DRAGON_SKELETON_I_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:spawn_dragon_skeleton_i_misc", SPAWN_DRAGON_SKELETON_I.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-        SPAWN_HIPPOCAMPUS_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:spawn_hippocampus_misc", SPAWN_HIPPOCAMPUS.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         SPAWN_SEA_SERPENT_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:spawn_sea_serpent_misc", SPAWN_SEA_SERPENT.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         SPAWN_STYMPHALIAN_BIRD_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:spawn_stymphalian_bird_misc", SPAWN_STYMPHALIAN_BIRD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
         SPAWN_WANDERING_CYCLOPS_CF = Registry.register(WorldGenRegistries.field_243653_e, "iceandfire:spawn_wandering_cyclops_misc", SPAWN_WANDERING_CYCLOPS.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
@@ -455,10 +450,6 @@ public class IafWorldRegistry {
             	LOADED_FEATURES.put("SPAWN_DRAGON_SKELETON_I_CF", true);
             }
         }
-    	if (IafConfig.spawnHippocampus && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.hippocampusBiomes, biome)) {
-    		event.getGeneration().func_242513_a(GenerationStage.Decoration.SURFACE_STRUCTURES, SPAWN_HIPPOCAMPUS_CF);
-        	LOADED_FEATURES.put("SPAWN_HIPPOCAMPUS_CF", true);
-    	}
         if (IafConfig.spawnSeaSerpents && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.seaSerpentBiomes, biome)) {
         	event.getGeneration().func_242513_a(GenerationStage.Decoration.SURFACE_STRUCTURES, SPAWN_SEA_SERPENT_CF);
         	LOADED_FEATURES.put("SPAWN_SEA_SERPENT_CF", true);

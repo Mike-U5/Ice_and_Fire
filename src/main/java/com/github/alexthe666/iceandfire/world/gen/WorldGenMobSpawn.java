@@ -7,7 +7,6 @@ import com.github.alexthe666.iceandfire.config.BiomeConfig;
 import com.github.alexthe666.iceandfire.entity.EntityCyclops;
 import com.github.alexthe666.iceandfire.entity.EntityDeathWorm;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
-import com.github.alexthe666.iceandfire.entity.EntityHippocampus;
 import com.github.alexthe666.iceandfire.entity.EntitySeaSerpent;
 import com.github.alexthe666.iceandfire.entity.EntityStymphalianBird;
 import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
@@ -98,17 +97,6 @@ public class WorldGenMobSpawn extends Feature<NoFeatureConfig> {
                 icedragon.setDeathStage((dragonage / 5) / 2);
                 icedragon.rotationYaw = rand.nextInt(360);
                 worldIn.addEntity(icedragon);
-            }
-        }
-        if (IafConfig.spawnHippocampus && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.hippocampusBiomes, biome) && rand.nextInt(IafConfig.hippocampusSpawnChance + 1) == 0) {
-            for (int i = 0; i < rand.nextInt(5); i++) {
-                BlockPos pos = oceanPos.add(rand.nextInt(10) - 5, rand.nextInt(30), rand.nextInt(10) - 5);
-                if (worldIn.getFluidState(pos).getFluid() == Fluids.WATER) {
-                    EntityHippocampus campus = IafEntityRegistry.HIPPOCAMPUS.create(worldIn.getWorld());
-                    campus.setVariant(rand.nextInt(5));
-                    campus.setLocationAndAngles(pos.getX() + 0.5F, pos.getY() + 0.5F, pos.getZ() + 0.5F, 0, 0);
-                    worldIn.addEntity(campus);
-                }
             }
         }
         if (IafConfig.spawnSeaSerpents && IafWorldRegistry.isFarEnoughFromSpawn(worldIn, position) && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.seaSerpentBiomes, biome) && rand.nextInt(IafConfig.seaSerpentSpawnChance + 1) == 0) {

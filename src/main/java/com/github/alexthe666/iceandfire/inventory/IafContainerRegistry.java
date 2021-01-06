@@ -16,7 +16,6 @@ public class IafContainerRegistry {
     public static final ContainerType PODIUM_CONTAINER = register(new ContainerType(ContainerPodium::new), "podium");
     public static final ContainerType DRAGON_CONTAINER = register(new ContainerType(ContainerDragon::new), "dragon");
     public static final ContainerType HIPPOGRYPH_CONTAINER = register(new ContainerType(ContainerHippogryph::new), "hippogryph");
-    public static final ContainerType HIPPOCAMPUS_CONTAINER = register(new ContainerType(ContainerHippocampus::new), "hippocampus");
     public static final ContainerType DRAGON_FORGE_CONTAINER = register(new ContainerType(ContainerDragonForge::new), "dragon_forge");
 
     public static ContainerType register(ContainerType type, String name) {

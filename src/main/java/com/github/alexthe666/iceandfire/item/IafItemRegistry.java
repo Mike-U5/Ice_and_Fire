@@ -400,7 +400,6 @@ public class IafItemRegistry {
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.PIXIE, 0XFF7F89, 0XE2CCE2, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_pixie"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.CYCLOPS, 0XB0826E, 0X3A1F0F, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_cyclops"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.SIREN, 0X8EE6CA, 0XF2DFC8, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_siren"));
-        event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.HIPPOCAMPUS, 0X4491C7, 0X4FC56B, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_hippocampus"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.DEATH_WORM, 0XD1CDA3, 0X423A3A, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_death_worm"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.COCKATRICE, 0X8F5005, 0X4F5A23, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_cockatrice"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.STYMPHALIAN_BIRD, 0X744F37, 0X9E6C4B, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_stymphalian_bird"));

@@ -51,7 +51,6 @@ public class IafEntityRegistry {
     public static final EntityType<EntityPixie> PIXIE = registerEntity(EntityType.Builder.create(EntityPixie::new, EntityClassification.CREATURE).size(0.4F, 0.8F), "pixie");
     public static final EntityType<EntityCyclops> CYCLOPS = registerEntity(EntityType.Builder.create(EntityCyclops::new, EntityClassification.CREATURE).size(1.95F, 7.4F), "cyclops");
     public static final EntityType<EntitySiren> SIREN = registerEntity(EntityType.Builder.create(EntitySiren::new, EntityClassification.CREATURE).size(1.6F, 0.9F), "siren");
-    public static final EntityType<EntityHippocampus> HIPPOCAMPUS = registerEntity(EntityType.Builder.create(EntityHippocampus::new, EntityClassification.CREATURE).size(1.95F, 0.95F), "hippocampus");
     public static final EntityType<EntityDeathWorm> DEATH_WORM = registerEntity(EntityType.Builder.create(EntityDeathWorm::new, EntityClassification.CREATURE).size(0.8F, 0.8F).setTrackingRange(128), "deathworm");
     public static final EntityType<EntityDeathWormEgg> DEATH_WORM_EGG = registerEntity(EntityType.Builder.create(EntityDeathWormEgg::new, EntityClassification.MISC).size(0.5F, 0.5F), "deathworm_egg");
     public static final EntityType<EntityCockatrice> COCKATRICE = registerEntity(EntityType.Builder.create(EntityCockatrice::new, EntityClassification.CREATURE).size(0.95F, 0.95F), "cockatrice");
@@ -115,7 +114,6 @@ public class IafEntityRegistry {
         GlobalEntityTypeAttributes.put(PIXIE, EntityPixie.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(CYCLOPS, EntityCyclops.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(SIREN, EntitySiren.bakeAttributes().func_233813_a_());
-        GlobalEntityTypeAttributes.put(HIPPOCAMPUS, EntityHippocampus.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(DEATH_WORM, EntityDeathWorm.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(COCKATRICE, EntityCockatrice.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(STYMPHALIAN_BIRD, EntityStymphalianBird.bakeAttributes().func_233813_a_());

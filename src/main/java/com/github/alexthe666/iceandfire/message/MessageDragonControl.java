@@ -5,7 +5,6 @@ import java.util.function.Supplier;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.entity.EntityDeathWorm;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
-import com.github.alexthe666.iceandfire.entity.EntityHippocampus;
 import com.github.alexthe666.iceandfire.entity.EntityHippogryph;
 import com.github.alexthe666.iceandfire.event.ServerEvents;
 
@@ -81,12 +80,6 @@ public class MessageDragonControl {
                             dragon.setPosition(message.getPosX(), message.getPosY(), message.getPosZ());
                         } else if (entity instanceof EntityHippogryph) {
                             EntityHippogryph hippo = (EntityHippogryph) entity;
-                            if (hippo.isOwner(player)) {
-                                hippo.setControlState(message.controlState);
-                            }
-                            hippo.setPosition(message.getPosX(), message.getPosY(), message.getPosZ());
-                        } else if (entity instanceof EntityHippocampus) {
-                            EntityHippocampus hippo = (EntityHippocampus) entity;
                             if (hippo.isOwner(player)) {
                                 hippo.setControlState(message.controlState);
                             }

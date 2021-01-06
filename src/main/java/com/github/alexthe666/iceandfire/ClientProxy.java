@@ -66,7 +66,6 @@ import com.github.alexthe666.iceandfire.client.render.entity.RenderDreadThrall;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderGhost;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderGhostSword;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderGorgon;
-import com.github.alexthe666.iceandfire.client.render.entity.RenderHippocampus;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderHippogryph;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderHydra;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderHydraArrow;
@@ -183,7 +182,6 @@ public class ClientProxy extends CommonProxy {
 
     @OnlyIn(Dist.CLIENT)
     @Override
-    @SuppressWarnings("deprecation")
     public void init() {
         IafGuiRegistry.register();
         this.bestiaryFontRenderer = Minecraft.getInstance().fontRenderer;
@@ -200,10 +198,8 @@ public class ClientProxy extends CommonProxy {
 
     }
 
-    @SuppressWarnings("deprecation")
     @OnlyIn(Dist.CLIENT)
     private void renderEntities() {
-
 
     }
 
@@ -234,7 +230,6 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.PIXIE, manager -> new RenderPixie(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.CYCLOPS, manager -> new RenderCyclops(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.SIREN, manager -> new RenderSiren(manager));
-        RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.HIPPOCAMPUS, manager -> new RenderHippocampus(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.DEATH_WORM, manager -> new RenderDeathWorm(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.DEATH_WORM_EGG, manager -> new SpriteRenderer(manager, Minecraft.getInstance().getItemRenderer()));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.COCKATRICE, manager -> new RenderCockatrice(manager));

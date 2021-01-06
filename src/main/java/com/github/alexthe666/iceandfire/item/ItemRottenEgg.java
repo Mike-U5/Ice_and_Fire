@@ -1,8 +1,6 @@
 package com.github.alexthe666.iceandfire.item;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
-import com.github.alexthe666.iceandfire.entity.EntityCockatriceEgg;
-import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -29,12 +27,6 @@ public class ItemRottenEgg extends Item {
         }
 
         worldIn.playSound(null, playerIn.getPosX(), playerIn.getPosY(), playerIn.getPosZ(), SoundEvents.ENTITY_EGG_THROW, SoundCategory.PLAYERS, 0.5F, 0.4F / (random.nextFloat() * 0.4F + 0.8F));
-
-        if (!worldIn.isRemote) {
-            EntityCockatriceEgg entityegg = new EntityCockatriceEgg(IafEntityRegistry.COCKATRICE_EGG, worldIn, playerIn);
-            entityegg.func_234612_a_(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
-            worldIn.addEntity(entityegg);
-        }
 
         return new ActionResult(ActionResultType.SUCCESS, itemstack);
     }

@@ -11,7 +11,6 @@ import com.github.alexthe666.citadel.server.entity.EntityPropertiesHandler;
 import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
-import com.github.alexthe666.iceandfire.entity.EntityCockatrice;
 import com.github.alexthe666.iceandfire.entity.EntityCyclops;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.entity.EntityGhost;
@@ -92,7 +91,6 @@ import net.minecraft.util.CombatEntry;
 import net.minecraft.util.CombatTracker;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -159,27 +157,7 @@ public class ServerEvents {
     }
 
     private static void signalChickenAlarm(LivingEntity chicken, LivingEntity attacker) {
-        float d0 = IafConfig.cockatriceChickenSearchLength;
-        List<Entity> list = chicken.world.getEntitiesWithinAABB(EntityCockatrice.class, (new AxisAlignedBB(chicken.getPosX(), chicken.getPosY(), chicken.getPosZ(), chicken.getPosX() + 1.0D, chicken.getPosY() + 1.0D, chicken.getPosZ() + 1.0D)).grow(d0, 10.0D, d0));
-        if (!list.isEmpty()) {
-            Iterator<Entity> itr = list.iterator();
-            while (itr.hasNext()) {
-                Entity entity = itr.next();
-                if (entity instanceof EntityCockatrice && !(attacker instanceof EntityCockatrice)) {
-                    EntityCockatrice cockatrice = (EntityCockatrice) entity;
-                    if (!DragonUtils.hasSameOwner(cockatrice, attacker)) {
-                        if (attacker instanceof PlayerEntity) {
-                            PlayerEntity player = (PlayerEntity) attacker;
-                            if (!player.isCreative() && !cockatrice.isOwner(player)) {
-                                cockatrice.setAttackTarget(player);
-                            }
-                        } else {
-                            cockatrice.setAttackTarget(attacker);
-                        }
-                    }
-                }
-            }
-        }
+    	// No
     }
 
     private static void signalAmphithereAlarm(LivingEntity villager, LivingEntity attacker) {

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.github.alexthe666.iceandfire.entity.EntityAmphithereArrow;
-import com.github.alexthe666.iceandfire.entity.EntityCockatriceEgg;
 import com.github.alexthe666.iceandfire.entity.EntityDeathWormEgg;
 import com.github.alexthe666.iceandfire.entity.EntityDragonArrow;
 import com.github.alexthe666.iceandfire.entity.EntityHippogryphEgg;
@@ -122,15 +121,6 @@ public class IafRecipeRegistry {
              */
             protected ProjectileEntity getProjectileEntity(World worldIn, IPosition position, ItemStack stackIn) {
                 EntityHippogryphEgg entityarrow = new EntityHippogryphEgg(IafEntityRegistry.HIPPOGRYPH_EGG, worldIn, position.getX(), position.getY(), position.getZ(), stackIn);
-                return entityarrow;
-            }
-        });
-        DispenserBlock.registerDispenseBehavior(IafItemRegistry.ROTTEN_EGG, new ProjectileDispenseBehavior() {
-            /**
-             * Return the projectile entity spawned by this dispense behavior.
-             */
-            protected ProjectileEntity getProjectileEntity(World worldIn, IPosition position, ItemStack stackIn) {
-                EntityCockatriceEgg entityarrow = new EntityCockatriceEgg(IafEntityRegistry.COCKATRICE_EGG, position.getX(), position.getY(), position.getZ(), worldIn);
                 return entityarrow;
             }
         });

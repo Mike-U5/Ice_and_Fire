@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire.client.render.entity;
 import java.util.Map;
 
 import com.github.alexthe666.citadel.client.model.TabulaModel;
-import com.github.alexthe666.iceandfire.client.model.ModelCockatrice;
 import com.github.alexthe666.iceandfire.client.model.ModelCyclops;
 import com.github.alexthe666.iceandfire.client.model.ModelHippogryph;
 import com.github.alexthe666.iceandfire.client.model.ModelHydraHead;
@@ -34,7 +33,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
     private static final Map<String, ResourceLocation> SKULL_TEXTURE_CACHE = Maps.newHashMap();
     private ModelHippogryph hippogryphModel;
     private ModelCyclops cyclopsModel;
-    private ModelCockatrice cockatriceModel;
     private ModelStymphalianBird stymphalianBirdModel;
     private ModelTroll trollModel;
     private ModelHydraHead hydraModel;
@@ -44,7 +42,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
         super(renderManager);
         this.hippogryphModel = new ModelHippogryph();
         this.cyclopsModel = new ModelCyclops();
-        this.cockatriceModel = new ModelCockatrice();
         this.stymphalianBirdModel = new ModelStymphalianBird();
         this.trollModel = new ModelTroll();
         this.seaSerpentModel = (TabulaModel) seaSerpentModel;
@@ -85,15 +82,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
                 cyclopsModel.resetToDefaultPose();
                 setRotationAngles(cyclopsModel.Head, onWall ? (float) Math.toRadians(50F) : 0F, 0, 0);
                 cyclopsModel.Head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-
-                break;
-            case COCKATRICE:
-                if (onWall) {
-                    matrixStackIn.translate(0, 0F, 0.35F);
-                }
-                cockatriceModel.resetToDefaultPose();
-                setRotationAngles(cockatriceModel.head, onWall ? (float) Math.toRadians(50F) : 0F, 0, 0);
-                cockatriceModel.head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 
                 break;
             case STYMPHALIAN:

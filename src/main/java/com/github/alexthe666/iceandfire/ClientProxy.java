@@ -46,7 +46,6 @@ import com.github.alexthe666.iceandfire.client.particle.ParticleSirenAppearance;
 import com.github.alexthe666.iceandfire.client.particle.ParticleSirenMusic;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderAmphithereArrow;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderChainTie;
-import com.github.alexthe666.iceandfire.client.render.entity.RenderCockatrice;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderCyclops;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderDeathWorm;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderDragonArrow;
@@ -232,8 +231,6 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.SIREN, manager -> new RenderSiren(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.DEATH_WORM, manager -> new RenderDeathWorm(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.DEATH_WORM_EGG, manager -> new SpriteRenderer(manager, Minecraft.getInstance().getItemRenderer()));
-        RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.COCKATRICE, manager -> new RenderCockatrice(manager));
-        RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.COCKATRICE_EGG, manager -> new SpriteRenderer(manager, Minecraft.getInstance().getItemRenderer()));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.STYMPHALIAN_BIRD, manager -> new RenderStymphalianBird(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.STYMPHALIAN_FEATHER, manager -> new RenderStymphalianFeather(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.STYMPHALIAN_ARROW, manager -> new RenderStymphalianArrow(manager));

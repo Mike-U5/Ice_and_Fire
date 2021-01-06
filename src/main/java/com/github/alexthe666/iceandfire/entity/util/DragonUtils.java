@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
-import com.github.alexthe666.iceandfire.entity.EntityCockatrice;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.entity.EntityGhost;
 import com.github.alexthe666.iceandfire.entity.EntityGorgon;
@@ -220,21 +219,6 @@ public class DragonUtils {
             return leader.renderYawOffset;
         }
     }
-
-    public static BlockPos getBlockInTargetsViewCockatrice(EntityCockatrice cockatrice, LivingEntity target) {
-        float radius = 10 + cockatrice.getRNG().nextInt(10);
-        float neg = cockatrice.getRNG().nextBoolean() ? 1 : -1;
-        float angle = (0.01745329251F * target.rotationYawHead);
-        double extraX = radius * MathHelper.sin((float) (Math.PI + angle));
-        double extraZ = radius * MathHelper.cos(angle);
-        BlockPos radialPos = new BlockPos(target.getPosX() + extraX, 0, target.getPosZ() + extraZ);
-        BlockPos ground = target.world.getHeight(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, radialPos);
-        if (!cockatrice.isTargetBlocked(Vector3d.func_237489_a_(ground)) && cockatrice.getDistanceSq(Vector3d.func_237489_a_(ground)) > 30) {
-            return ground;
-        }
-        return target.func_233580_cy_();
-    }
-
 
     public static BlockPos getBlockInTargetsViewGhost(EntityGhost ghost, LivingEntity target) {
         float radius = 4 + ghost.getRNG().nextInt(5);

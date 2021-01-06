@@ -401,7 +401,6 @@ public class IafItemRegistry {
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.CYCLOPS, 0XB0826E, 0X3A1F0F, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_cyclops"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.SIREN, 0X8EE6CA, 0XF2DFC8, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_siren"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.DEATH_WORM, 0XD1CDA3, 0X423A3A, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_death_worm"));
-        event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.COCKATRICE, 0X8F5005, 0X4F5A23, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_cockatrice"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.STYMPHALIAN_BIRD, 0X744F37, 0X9E6C4B, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_stymphalian_bird"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.TROLL, 0X3D413D, 0X58433A, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_troll"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.MYRMEX_WORKER, 0XA16026, 0X594520, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_myrmex_worker"));

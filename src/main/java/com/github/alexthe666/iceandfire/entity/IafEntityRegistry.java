@@ -53,8 +53,6 @@ public class IafEntityRegistry {
     public static final EntityType<EntitySiren> SIREN = registerEntity(EntityType.Builder.create(EntitySiren::new, EntityClassification.CREATURE).size(1.6F, 0.9F), "siren");
     public static final EntityType<EntityDeathWorm> DEATH_WORM = registerEntity(EntityType.Builder.create(EntityDeathWorm::new, EntityClassification.CREATURE).size(0.8F, 0.8F).setTrackingRange(128), "deathworm");
     public static final EntityType<EntityDeathWormEgg> DEATH_WORM_EGG = registerEntity(EntityType.Builder.create(EntityDeathWormEgg::new, EntityClassification.MISC).size(0.5F, 0.5F), "deathworm_egg");
-    public static final EntityType<EntityCockatrice> COCKATRICE = registerEntity(EntityType.Builder.create(EntityCockatrice::new, EntityClassification.CREATURE).size(0.95F, 0.95F), "cockatrice");
-    public static final EntityType<EntityCockatriceEgg> COCKATRICE_EGG = registerEntity(EntityType.Builder.create(EntityCockatriceEgg::new, EntityClassification.MISC).size(0.5F, 0.5F), "cockatrice_egg");
     public static final EntityType<EntityStymphalianBird> STYMPHALIAN_BIRD = registerEntity(EntityType.Builder.create(EntityStymphalianBird::new, EntityClassification.CREATURE).size(1.3F, 1.2F).setTrackingRange(128), "stymphalian_bird");
     public static final EntityType<EntityStymphalianFeather> STYMPHALIAN_FEATHER = registerEntity(EntityType.Builder.create(EntityStymphalianFeather::new, EntityClassification.MISC).size(0.5F, 0.5F).setCustomClientFactory(EntityStymphalianFeather::new), "stymphalian_feather");
     public static final EntityType<EntityStymphalianArrow> STYMPHALIAN_ARROW = registerEntity(EntityType.Builder.create(EntityStymphalianArrow::new, EntityClassification.MISC).size(0.5F, 0.5F).setCustomClientFactory(EntityStymphalianArrow::new), "stymphalian_arrow");
@@ -115,7 +113,6 @@ public class IafEntityRegistry {
         GlobalEntityTypeAttributes.put(CYCLOPS, EntityCyclops.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(SIREN, EntitySiren.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(DEATH_WORM, EntityDeathWorm.bakeAttributes().func_233813_a_());
-        GlobalEntityTypeAttributes.put(COCKATRICE, EntityCockatrice.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(STYMPHALIAN_BIRD, EntityStymphalianBird.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(TROLL, EntityTroll.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(MYRMEX_WORKER, EntityMyrmexWorker.bakeAttributes().func_233813_a_());
@@ -143,7 +140,6 @@ public class IafEntityRegistry {
         EntitySpawnPlacementRegistry.register(HIPPOGRYPH, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityHippogryph::canSpawnOn);
         EntitySpawnPlacementRegistry.register(TROLL, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityTroll::canTrollSpawnOn);
         EntitySpawnPlacementRegistry.register(DREAD_LICH, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityDreadLich::canLichSpawnOn);
-        EntitySpawnPlacementRegistry.register(COCKATRICE, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityCockatrice::canSpawnOn);
     }
         @SubscribeEvent
     public static void registerEntities(RegistryEvent.Register<EntityType<?>> event) {
@@ -186,10 +182,6 @@ public class IafEntityRegistry {
         if (IafConfig.spawnLiches && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.mausoleumBiomes, biome)) {
             event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(IafEntityRegistry.DREAD_LICH, IafConfig.lichSpawnRate, 1, 1));
             LOADED_ENTITIES.put("DREAD_LICH", true);
-        }
-        if (IafConfig.spawnCockatrices && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.cockatriceBiomes, biome)) {
-            event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(IafEntityRegistry.COCKATRICE, IafConfig.cockatriceSpawnRate, 1, 2));
-            LOADED_ENTITIES.put("COCKATRICE", true);
         }
         if (IafConfig.spawnTrolls && (
     		IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.forestTrollBiomes, biome) ||

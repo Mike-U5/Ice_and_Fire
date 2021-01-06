@@ -8,7 +8,6 @@ import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.entity.EntityGhost;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.EntityHippogryph;
 import com.github.alexthe666.iceandfire.entity.EntityMutlipartPart;
 import com.github.alexthe666.iceandfire.entity.EntitySeaSerpent;
@@ -234,20 +233,6 @@ public class DragonUtils {
         return ghost.func_233580_cy_();
     }
 
-    public static BlockPos getBlockInTargetsViewGorgon(EntityGorgon cockatrice, LivingEntity target) {
-        float radius = 6;
-        float neg = cockatrice.getRNG().nextBoolean() ? 1 : -1;
-        float angle = (0.01745329251F * target.rotationYawHead);
-        double extraX = radius * MathHelper.sin((float) (Math.PI + angle));
-        double extraZ = radius * MathHelper.cos(angle);
-        BlockPos radialPos = new BlockPos(target.getPosX() + extraX, target.getPosY(), target.getPosZ() + extraZ);
-        if (!cockatrice.isTargetBlocked(Vector3d.func_237489_a_(radialPos).add(0, 0.75, 0)) && cockatrice.getDistanceSq(Vector3d.func_237489_a_(radialPos)) < 300) {
-            return radialPos;
-        }
-        return target.func_233580_cy_();
-    }
-
-
     public static BlockPos getBlockInTargetsViewSeaSerpent(EntitySeaSerpent serpent, LivingEntity target) {
         float radius = 10 * serpent.getSeaSerpentScale() + serpent.getRNG().nextInt(10);
         float neg = serpent.getRNG().nextBoolean() ? 1 : -1;
@@ -312,7 +297,7 @@ public class DragonUtils {
     }
 
     public static boolean isAlive(LivingEntity entity) {
-        boolean alive = (!(entity instanceof IDeadMob) || !((IDeadMob) entity).isMobDead()) && !EntityGorgon.isStoneMob(entity);
+        boolean alive = (!(entity instanceof IDeadMob) || !((IDeadMob) entity).isMobDead());
         return alive;
     }
 

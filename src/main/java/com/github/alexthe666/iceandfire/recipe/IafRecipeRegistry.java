@@ -46,7 +46,6 @@ public class IafRecipeRegistry {
     public static final BannerPattern PATTERN_EYE = addBanner("eye", new ItemStack(IafItemRegistry.CYCLOPS_EYE));
     public static final BannerPattern PATTERN_FAE = addBanner("fae", new ItemStack(IafItemRegistry.PIXIE_WINGS));
     public static final BannerPattern PATTERN_FEATHER = addBanner("feather", new ItemStack(Items.FEATHER));
-    public static final BannerPattern PATTERN_GORGON = addBanner("gorgon", new ItemStack(IafItemRegistry.GORGON_HEAD));
     public static final BannerPattern PATTERN_HIPPOCAMPUS = addBanner("hippocampus", new ItemStack(IafItemRegistry.HIPPOCAMPUS_FIN));
     public static final BannerPattern PATTERN_HIPPOGRYPH_HEAD = addBanner("hippogryph_head", new ItemStack(EnumSkullType.HIPPOGRYPH.skull_item));
     public static final BannerPattern PATTERN_MERMAID = addBanner("mermaid", new ItemStack(IafItemRegistry.SIREN_TEAR));
@@ -142,100 +141,8 @@ public class IafRecipeRegistry {
                 return entityarrow;
             }
         });
-        /*
-        OreDictionary.registerOre("desertMyrmexEgg", new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("jungleMyrmexEgg", new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("charredBlock", IafBlockRegistry.CHARRED_DIRT);
-        OreDictionary.registerOre("charredBlock", IafBlockRegistry.CHARRED_GRASS);
-        OreDictionary.registerOre("charredBlock", IafBlockRegistry.CHARRED_GRASS_PATH);
-        OreDictionary.registerOre("charredBlock", IafBlockRegistry.CHARRED_GRAVEL);
-        OreDictionary.registerOre("charredBlock", IafBlockRegistry.CHARRED_COBBLESTONE);
-        OreDictionary.registerOre("charredBlock", IafBlockRegistry.CHARRED_STONE);
-        OreDictionary.registerOre("frozenBlock", IafBlockRegistry.FROZEN_DIRT);
-        OreDictionary.registerOre("frozenBlock", IafBlockRegistry.FROZEN_GRASS);
-        OreDictionary.registerOre("frozenBlock", IafBlockRegistry.FROZEN_GRASS_PATH);
-        OreDictionary.registerOre("frozenBlock", IafBlockRegistry.FROZEN_GRAVEL);
-        OreDictionary.registerOre("frozenBlock", IafBlockRegistry.FROZEN_COBBLESTONE);
-        OreDictionary.registerOre("frozenBlock", IafBlockRegistry.FROZEN_STONE);
-        OreDictionary.registerOre("ingotFireDragonsteel", IafItemRegistry.DRAGONSTEEL_FIRE_INGOT);
-        OreDictionary.registerOre("blockFireDragonsteel", IafBlockRegistry.DRAGONSTEEL_FIRE_BLOCK);
-        OreDictionary.registerOre("ingotIceDragonsteel", IafItemRegistry.DRAGONSTEEL_ICE_INGOT);
-        OreDictionary.registerOre("blockIceDragonsteel", IafBlockRegistry.DRAGONSTEEL_ICE_BLOCK);
-        OreDictionary.registerOre("ingotSilver", IafItemRegistry.SILVER_INGOT);
-        OreDictionary.registerOre("nuggetSilver", IafItemRegistry.SILVER_NUGGET);
-        OreDictionary.registerOre("oreSilver", IafBlockRegistry.SILVER_ORE);
-        OreDictionary.registerOre("blockSilver", IafBlockRegistry.SILVER_BLOCK);
-        OreDictionary.registerOre("gemSapphire", IafItemRegistry.SAPPHIRE_GEM);
-        OreDictionary.registerOre("oreSapphire", IafBlockRegistry.SAPPHIRE_ORE);
-        OreDictionary.registerOre("blockSapphire", IafBlockRegistry.SAPPHIRE_BLOCK);
-        OreDictionary.registerOre("boneWither", IafItemRegistry.WITHERBONE);
-        OreDictionary.registerOre("fireDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_RED);
-        OreDictionary.registerOre("fireDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_BRONZE);
-        OreDictionary.registerOre("fireDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_GRAY);
-        OreDictionary.registerOre("fireDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_GREEN);
-        OreDictionary.registerOre("iceDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_BLUE);
-        OreDictionary.registerOre("iceDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_WHITE);
-        OreDictionary.registerOre("iceDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_SAPPHIRE);
-        OreDictionary.registerOre("iceDragonScaleBlock", IafBlockRegistry.DRAGON_SCALE_SILVER);
-        OreDictionary.registerOre("woolBlock", new ItemStack(Blocks.WOOL, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("foodMeat", Items.CHICKEN);
-        OreDictionary.registerOre("foodMeat", Items.COOKED_CHICKEN);
-        OreDictionary.registerOre("foodMeat", Items.BEEF);
-        OreDictionary.registerOre("foodMeat", Items.COOKED_BEEF);
-        OreDictionary.registerOre("foodMeat", Items.PORKCHOP);
-        OreDictionary.registerOre("foodMeat", Items.COOKED_PORKCHOP);
-        OreDictionary.registerOre("foodMeat", Items.MUTTON);
-        OreDictionary.registerOre("foodMeat", Items.COOKED_MUTTON);
-        OreDictionary.registerOre("foodMeat", Items.RABBIT);
-        OreDictionary.registerOre("foodMeat", Items.COOKED_RABBIT);
-        OreDictionary.registerOre("boneWithered", IafItemRegistry.WITHERBONE);
-        OreDictionary.registerOre("boneDragon", IafItemRegistry.DRAGON_BONE);
-        for (EnumSeaSerpent serpent : EnumSeaSerpent.values()) {
-            OreDictionary.registerOre("seaSerpentScales", serpent.scale);
-        }
-        OreDictionary.registerOre("listAllEgg", new ItemStack(IafItemRegistry.HIPPOGRYPH_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("objectEgg", new ItemStack(IafItemRegistry.HIPPOGRYPH_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("bakingEgg", new ItemStack(IafItemRegistry.HIPPOGRYPH_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("egg", new ItemStack(IafItemRegistry.HIPPOGRYPH_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("ingredientEgg", new ItemStack(IafItemRegistry.HIPPOGRYPH_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("foodSimpleEgg", new ItemStack(IafItemRegistry.HIPPOGRYPH_EGG, 1, OreDictionary.WILDCARD_VALUE));
-
-        OreDictionary.registerOre("listAllEgg", new ItemStack(IafItemRegistry.DEATHWORM_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("objectEgg", new ItemStack(IafItemRegistry.DEATHWORM_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("bakingEgg", new ItemStack(IafItemRegistry.DEATHWORM_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("egg", new ItemStack(IafItemRegistry.DEATHWORM_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("ingredientEgg", new ItemStack(IafItemRegistry.DEATHWORM_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("foodSimpleEgg", new ItemStack(IafItemRegistry.DEATHWORM_EGG, 1, OreDictionary.WILDCARD_VALUE));
-
-        OreDictionary.registerOre("listAllEgg", new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("objectEgg", new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("bakingEgg", new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("egg", new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("ingredientEgg", new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("foodSimpleEgg", new ItemStack(IafItemRegistry.MYRMEX_JUNGLE_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("listAllEgg", new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("objectEgg", new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("bakingEgg", new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("egg", new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("ingredientEgg", new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("foodSimpleEgg", new ItemStack(IafItemRegistry.MYRMEX_DESERT_EGG, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("toolAxe", IafItemRegistry.DRAGONBONE_AXE);
-        OreDictionary.registerOre("toolAxe", IafItemRegistry.MYRMEX_DESERT_AXE);
-        OreDictionary.registerOre("toolAxe", IafItemRegistry.MYRMEX_JUNGLE_AXE);
-        OreDictionary.registerOre("toolAxe", IafItemRegistry.SILVER_AXE);
-        OreDictionary.registerOre("toolAxe", IafItemRegistry.DRAGONSTEEL_FIRE_AXE);
-        OreDictionary.registerOre("toolAxe", IafItemRegistry.DRAGONSTEEL_ICE_AXE);
-
-        OreDictionary.registerOre("dragonSkull",  new ItemStack(IafItemRegistry.DRAGON_SKULL, 1, OreDictionary.WILDCARD_VALUE));
-        OreDictionary.registerOre("mythicalSkull",  new ItemStack(IafItemRegistry.DRAGON_SKULL, 1, OreDictionary.WILDCARD_VALUE));
-        for(EnumSkullType skullType : EnumSkullType.values()) {
-            OreDictionary.registerOre("mythicalSkull", skullType.skull_item);
-        }
-        */
-
+ 
         IafItemRegistry.BLINDFOLD_ARMOR_MATERIAL.setRepairMaterial(Ingredient.fromStacks(new ItemStack(Items.STRING)));
-        IafItemRegistry.SILVER_ARMOR_MATERIAL.setRepairMaterial(Ingredient.fromStacks(new ItemStack(IafItemRegistry.SILVER_INGOT)));
-        IafItemRegistry.SILVER_TOOL_MATERIAL.setRepairMaterial(Ingredient.fromStacks(new ItemStack(IafItemRegistry.SILVER_INGOT)));
         IafItemRegistry.DRAGONBONE_TOOL_MATERIAL.setRepairMaterial(Ingredient.fromStacks(new ItemStack(IafItemRegistry.DRAGON_BONE)));
         IafItemRegistry.FIRE_DRAGONBONE_TOOL_MATERIAL.setRepairMaterial(Ingredient.fromStacks(new ItemStack(IafItemRegistry.DRAGON_BONE)));
         IafItemRegistry.ICE_DRAGONBONE_TOOL_MATERIAL.setRepairMaterial(Ingredient.fromStacks(new ItemStack(IafItemRegistry.DRAGON_BONE)));

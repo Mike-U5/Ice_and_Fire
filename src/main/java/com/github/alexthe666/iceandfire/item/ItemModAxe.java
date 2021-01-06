@@ -85,9 +85,6 @@ public class ItemModAxe extends AxeItem {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
-        if (this == IafItemRegistry.SILVER_AXE) {
-            tooltip.add(new TranslationTextComponent("silvertools.hurt").func_240699_a_(TextFormatting.GREEN));
-        }
         if (this == IafItemRegistry.MYRMEX_DESERT_AXE || this == IafItemRegistry.MYRMEX_JUNGLE_AXE) {
             tooltip.add(new TranslationTextComponent("myrmextools.hurt").func_240699_a_(TextFormatting.GREEN));
         }

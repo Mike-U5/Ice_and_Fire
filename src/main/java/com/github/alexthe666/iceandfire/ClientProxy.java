@@ -64,7 +64,6 @@ import com.github.alexthe666.iceandfire.client.render.entity.RenderDreadScuttler
 import com.github.alexthe666.iceandfire.client.render.entity.RenderDreadThrall;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderGhost;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderGhostSword;
-import com.github.alexthe666.iceandfire.client.render.entity.RenderGorgon;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderHippogryph;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderHydra;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderHydraArrow;
@@ -225,7 +224,6 @@ public class ClientProxy extends CommonProxy {
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.HIPPOGRYPH_EGG, manager -> new SpriteRenderer(manager, Minecraft.getInstance().getItemRenderer()));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.HIPPOGRYPH, manager -> new RenderHippogryph(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.STONE_STATUE, manager -> new RenderStoneStatue(manager));
-        RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.GORGON, manager -> new RenderGorgon(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.PIXIE, manager -> new RenderPixie(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.CYCLOPS, manager -> new RenderCyclops(manager));
         RenderingRegistry.registerEntityRenderingHandler(IafEntityRegistry.SIREN, manager -> new RenderSiren(manager));

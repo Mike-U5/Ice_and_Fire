@@ -2,7 +2,6 @@ package com.github.alexthe666.iceandfire.client.render.entity.layer;
 
 import com.github.alexthe666.iceandfire.client.model.ModelTroll;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderTroll;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.EntityTroll;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -23,11 +22,8 @@ public class LayerTrollEyes extends LayerRenderer<EntityTroll, ModelTroll> {
 
     @Override
     public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, EntityTroll troll, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-        if (!EntityGorgon.isStoneMob(troll)) {
-            RenderType tex = RenderType.getEyes(troll.getTrollType().TEXTURE_EYES);
-            IVertexBuilder ivertexbuilder = bufferIn.getBuffer(tex);
-            this.getEntityModel().render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-
-        }
+    	RenderType tex = RenderType.getEyes(troll.getTrollType().TEXTURE_EYES);
+        IVertexBuilder ivertexbuilder = bufferIn.getBuffer(tex);
+        this.getEntityModel().render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
     }
 }

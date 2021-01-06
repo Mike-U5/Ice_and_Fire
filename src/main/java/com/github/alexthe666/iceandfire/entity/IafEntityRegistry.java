@@ -47,7 +47,6 @@ public class IafEntityRegistry {
     public static final EntityType<EntityHippogryphEgg> HIPPOGRYPH_EGG = registerEntity(EntityType.Builder.create(EntityHippogryphEgg::new, EntityClassification.MISC).size(0.5F, 0.5F), "hippogryph_egg");
     public static final EntityType<EntityHippogryph> HIPPOGRYPH = registerEntity(EntityType.Builder.create(EntityHippogryph::new, EntityClassification.CREATURE).size(1.7F, 1.6F).setTrackingRange(128), "hippogryph");
     public static final EntityType<EntityStoneStatue> STONE_STATUE = registerEntity(EntityType.Builder.create(EntityStoneStatue::new, EntityClassification.CREATURE).size(0.5F, 0.5F), "stone_statue");
-    public static final EntityType<EntityGorgon> GORGON = registerEntity(EntityType.Builder.create(EntityGorgon::new, EntityClassification.CREATURE).size(0.8F, 1.99F), "gorgon");
     public static final EntityType<EntityPixie> PIXIE = registerEntity(EntityType.Builder.create(EntityPixie::new, EntityClassification.CREATURE).size(0.4F, 0.8F), "pixie");
     public static final EntityType<EntityCyclops> CYCLOPS = registerEntity(EntityType.Builder.create(EntityCyclops::new, EntityClassification.CREATURE).size(1.95F, 7.4F), "cyclops");
     public static final EntityType<EntitySiren> SIREN = registerEntity(EntityType.Builder.create(EntitySiren::new, EntityClassification.CREATURE).size(1.6F, 0.9F), "siren");
@@ -107,7 +106,6 @@ public class IafEntityRegistry {
         GlobalEntityTypeAttributes.put(ICE_DRAGON, EntityIceDragon.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(LIGHTNING_DRAGON, EntityLightningDragon.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(HIPPOGRYPH, EntityHippogryph.bakeAttributes().func_233813_a_());
-        GlobalEntityTypeAttributes.put(GORGON, EntityGorgon.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(STONE_STATUE, EntityStoneStatue.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(PIXIE, EntityPixie.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(CYCLOPS, EntityCyclops.bakeAttributes().func_233813_a_());

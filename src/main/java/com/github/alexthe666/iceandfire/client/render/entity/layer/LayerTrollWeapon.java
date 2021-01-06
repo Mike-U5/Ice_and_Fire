@@ -2,7 +2,6 @@ package com.github.alexthe666.iceandfire.client.render.entity.layer;
 
 import com.github.alexthe666.iceandfire.client.model.ModelTroll;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderTroll;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.EntityTroll;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
@@ -28,7 +27,7 @@ public class LayerTrollWeapon extends LayerRenderer<EntityTroll, ModelTroll> {
 
     @Override
     public void render(MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int packedLightIn, EntityTroll troll, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-        if (troll.getWeaponType() != null && !EntityGorgon.isStoneMob(troll)) {
+        if (troll.getWeaponType() != null) {
             RenderType tex = RenderType.getEntityCutout(troll.getWeaponType().TEXTURE);
             this.getEntityModel().render(matrixStackIn, bufferIn.getBuffer(tex), packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
         }

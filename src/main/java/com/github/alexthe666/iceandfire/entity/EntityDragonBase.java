@@ -1961,7 +1961,7 @@ public abstract class EntityDragonBase extends TameableEntity implements IPassab
     public abstract SoundEvent getRoarSound();
 
     public void roar() {
-        if (EntityGorgon.isStoneMob(this) || this.isModelDead()) {
+        if (this.isModelDead()) {
             return;
         }
         if (rand.nextBoolean()) {
@@ -2029,7 +2029,7 @@ public abstract class EntityDragonBase extends TameableEntity implements IPassab
     }
 
     public boolean shouldRenderEyes() {
-        return !this.isSleeping() && !this.isModelDead() && !this.isBlinking() && !EntityGorgon.isStoneMob(this);
+        return !this.isSleeping() && !this.isModelDead() && !this.isBlinking();
     }
 
     @Override

@@ -15,7 +15,6 @@ import com.github.alexthe666.iceandfire.entity.EntityCyclops;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.entity.EntityGhost;
 import com.github.alexthe666.iceandfire.entity.EntityGhostSword;
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
 import com.github.alexthe666.iceandfire.entity.EntityHydra;
 import com.github.alexthe666.iceandfire.entity.EntityHydraHead;
 import com.github.alexthe666.iceandfire.entity.EntityIceDragon;
@@ -676,7 +675,7 @@ public class ServerEvents {
             Iterator<Entity> itr = properties.glarers.iterator();
             while (itr.hasNext()) {
                 Entity next = itr.next();
-                if (next instanceof LivingEntity && !EntityGorgon.isEntityLookingAt((LivingEntity) next, event.getEntityLiving(), 0.2F)) {
+                if (next instanceof LivingEntity) {
                     MiscEntityProperties theirProperties = EntityPropertiesHandler.INSTANCE.getProperties(next, MiscEntityProperties.class);
                     theirProperties.entitiesWeAreGlaringAt.remove(event.getEntityLiving());
                     itr.remove();

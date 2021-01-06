@@ -96,7 +96,7 @@ public class EntityTroll extends MonsterEntity implements IAnimatedEntity, IVill
 
     @Override
     public boolean isAIDisabled() {
-        return EntityGorgon.isStoneMob(this) || super.isAIDisabled();
+        return super.isAIDisabled();
     }
 
     public static boolean canTrollSpawnOn(EntityType<? extends MobEntity> typeIn, IServerWorld worldIn, SpawnReason reason, BlockPos pos, Random randomIn) {
@@ -306,7 +306,7 @@ public class EntityTroll extends MonsterEntity implements IAnimatedEntity, IVill
         if (world.getDifficulty() == Difficulty.PEACEFUL && this.getAttackTarget() instanceof PlayerEntity) {
             this.setAttackTarget(null);
         }
-        boolean stone = EntityGorgon.isStoneMob(this);
+        boolean stone = false;
         if (stone && stoneProgress < 20.0F) {
             stoneProgress += 2F;
         } else if (!stone && stoneProgress > 0.0F) {

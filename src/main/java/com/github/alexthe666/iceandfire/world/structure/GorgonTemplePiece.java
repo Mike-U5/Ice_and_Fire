@@ -3,13 +3,9 @@ package com.github.alexthe666.iceandfire.world.structure;
 import java.util.List;
 import java.util.Random;
 
-import com.github.alexthe666.iceandfire.entity.EntityGorgon;
-import com.github.alexthe666.iceandfire.entity.IafEntityRegistry;
 import com.github.alexthe666.iceandfire.world.IafWorldRegistry;
 import com.github.alexthe666.iceandfire.world.gen.processor.GorgonTempleProcessor;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.SpawnReason;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -105,18 +101,7 @@ public class GorgonTemplePiece  {
         }
 
         protected void handleDataMarker(String function, BlockPos pos, IServerWorld worldIn, Random rand, MutableBoundingBox sbb) {
-            if ("iceandfire:spawn_gorgon".equals(function)) {
-                worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 2);
-                if(!spawnedGorgon){
-                    spawnedGorgon = true;
-                    EntityGorgon gorgon = IafEntityRegistry.GORGON.create(worldIn.getWorld());
-                    gorgon.onInitialSpawn(worldIn, worldIn.getDifficultyForLocation(pos), SpawnReason.SPAWNER, null, null);
-                    gorgon.setPosition(pos.getX(), pos.getY(), pos.getZ());
-                    gorgon.enablePersistence();
-                    worldIn.addEntity(gorgon);
-                }
 
-            }
         }
     }
 

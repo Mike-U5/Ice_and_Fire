@@ -27,9 +27,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = IceAndFire.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class IafItemRegistry {
 
-    public static CustomArmorMaterial SILVER_ARMOR_MATERIAL = new IafArmorMaterial("silver", 15, new int[]{1, 4, 5, 2}, 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0);
-    public static CustomArmorMaterial COPPER_ARMOR_MATERIAL = new IafArmorMaterial("copper", 10, new int[]{1, 3, 4, 2}, 15, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0);
-    public static CustomArmorMaterial BLINDFOLD_ARMOR_MATERIAL = new IafArmorMaterial("blindfold", 5, new int[]{1, 1, 1, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
+	public static CustomArmorMaterial BLINDFOLD_ARMOR_MATERIAL = new IafArmorMaterial("blindfold", 5, new int[]{1, 1, 1, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
     public static CustomArmorMaterial SHEEP_ARMOR_MATERIAL = new IafArmorMaterial("sheep", 5, new int[]{1, 3, 2, 1}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
     public static CustomArmorMaterial MYRMEX_DESERT_ARMOR_MATERIAL = new IafArmorMaterial("myrmexdesert", 20, new int[]{3, 5, 8, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
     public static CustomArmorMaterial MYRMEX_JUNGLE_ARMOR_MATERIAL = new IafArmorMaterial("myrmexjungle", 20, new int[]{3, 5, 8, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
@@ -71,22 +69,7 @@ public class IafItemRegistry {
     public static final Item AMYTHEST_GEM = new ItemGeneric("amythest_gem");
     public static final Item COPPER_INGOT = new ItemGeneric("copper_ingot");
     public static final Item COPPER_NUGGET = new ItemGeneric("copper_nugget");
-    public static final Item SILVER_SWORD = new ItemModSword(SILVER_TOOL_MATERIAL, "silver_sword");
-    public static final Item SILVER_SHOVEL = new ItemModShovel(SILVER_TOOL_MATERIAL, "silver_shovel");
-    public static final Item SILVER_PICKAXE = new ItemModPickaxe(SILVER_TOOL_MATERIAL, "silver_pickaxe");
-    public static final Item SILVER_AXE = new ItemModAxe(SILVER_TOOL_MATERIAL, "silver_axe");
-    public static final Item SILVER_HOE = new ItemModHoe(SILVER_TOOL_MATERIAL, "silver_hoe");
 
-    public static final Item COPPER_HELMET = new ItemCopperArmor(COPPER_ARMOR_MATERIAL, EquipmentSlotType.HEAD, "armor_copper_metal_helmet");
-    public static final Item COPPER_CHESTPLATE = new ItemCopperArmor(COPPER_ARMOR_MATERIAL, EquipmentSlotType.CHEST, "armor_copper_metal_chestplate");
-    public static final Item COPPER_LEGGINGS = new ItemCopperArmor(COPPER_ARMOR_MATERIAL, EquipmentSlotType.LEGS, "armor_copper_metal_leggings");
-    public static final Item COPPER_BOOTS = new ItemCopperArmor(COPPER_ARMOR_MATERIAL, EquipmentSlotType.FEET, "armor_copper_metal_boots");
-    public static final Item COPPER_SWORD = new ItemModSword(COPPER_TOOL_MATERIAL, "copper_sword");
-    public static final Item COPPER_SHOVEL = new ItemModShovel(COPPER_TOOL_MATERIAL, "copper_shovel");
-    public static final Item COPPER_PICKAXE = new ItemModPickaxe(COPPER_TOOL_MATERIAL, "copper_pickaxe");
-    public static final Item COPPER_AXE = new ItemModAxe(COPPER_TOOL_MATERIAL, "copper_axe");
-    public static final Item COPPER_HOE = new ItemModHoe(COPPER_TOOL_MATERIAL, "copper_hoe");
-    
     public static final Item FIRE_STEW = new ItemGeneric("fire_stew");
     public static final Item FROST_STEW = new ItemGeneric("frost_stew");
     public static final Item LIGHTNING_STEW = new ItemGeneric("lightning_stew");
@@ -187,7 +170,6 @@ public class IafItemRegistry {
     public static final Item DIAMOND_HIPPOGRYPH_ARMOR = new ItemGeneric("diamond_hippogryph_armor", 0, 1);
     public static final Item HIPPOGRYPH_TALON = new ItemGeneric("hippogryph_talon", 1);
     public static final Item HIPPOGRYPH_SWORD = new ItemHippogryphSword();
-    public static final Item GORGON_HEAD = new ItemGorgonHead();
     public static final Item STONE_STATUE = new ItemStoneStatue();
     public static final Item BLINDFOLD = new ItemBlindfold();
     public static final Item PIXIE_DUST = new ItemPixieDust();
@@ -396,7 +378,6 @@ public class IafItemRegistry {
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.ICE_DRAGON, 0XB5DDFB, 0X7EBAF0, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_ice_dragon"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.LIGHTNING_DRAGON, 0X422367, 0X725691, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_lightning_dragon"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.HIPPOGRYPH, 0XD8D8D8, 0XD1B55D, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_hippogryph"));
-        event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.GORGON, 0XD0D99F, 0X684530, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_gorgon"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.PIXIE, 0XFF7F89, 0XE2CCE2, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_pixie"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.CYCLOPS, 0XB0826E, 0X3A1F0F, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_cyclops"));
         event.getRegistry().register(new SpawnEggItem(IafEntityRegistry.SIREN, 0X8EE6CA, 0XF2DFC8, new Item.Properties().group(IceAndFire.TAB_ITEMS)).setRegistryName("iceandfire:spawn_egg_siren"));

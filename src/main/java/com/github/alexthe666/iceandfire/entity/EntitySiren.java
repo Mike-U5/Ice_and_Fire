@@ -273,11 +273,11 @@ public class EntitySiren extends MonsterEntity implements IAnimatedEntity, IVill
         } else if (!swimming && swimProgress > 0.0F) {
             swimProgress -= 0.5F;
         }
-        if (!world.isRemote && !EntityGorgon.isStoneMob(this) && this.isActuallySinging()) {
+        if (!world.isRemote && this.isActuallySinging()) {
             checkForPrey();
             updateLure();
         }
-        if (!world.isRemote && EntityGorgon.isStoneMob(this) && this.isSinging()) {
+        if (!world.isRemote && this.isSinging()) {
             this.setSinging(false);
         }
         if (isActuallySinging() && !this.isInWater()) {

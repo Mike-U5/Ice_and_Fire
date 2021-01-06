@@ -11,7 +11,6 @@ import com.github.alexthe666.citadel.server.entity.EntityPropertiesHandler;
 import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import com.github.alexthe666.iceandfire.block.IafBlockRegistry;
-import com.github.alexthe666.iceandfire.entity.EntityAmphithere;
 import com.github.alexthe666.iceandfire.entity.EntityCockatrice;
 import com.github.alexthe666.iceandfire.entity.EntityCyclops;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
@@ -81,7 +80,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.loot.ItemLootEntry;
 import net.minecraft.loot.LootEntry;
 import net.minecraft.loot.LootPool;
-import net.minecraft.loot.LootTables;
 import net.minecraft.loot.RandomValueRange;
 import net.minecraft.loot.conditions.RandomChance;
 import net.minecraft.nbt.CompoundNBT;
@@ -185,27 +183,7 @@ public class ServerEvents {
     }
 
     private static void signalAmphithereAlarm(LivingEntity villager, LivingEntity attacker) {
-        float d0 = IafConfig.amphithereVillagerSearchLength;
-        List<Entity> list = villager.world.getEntitiesWithinAABB(EntityAmphithere.class, (new AxisAlignedBB(villager.getPosX() - 1.0D, villager.getPosY() - 1.0D, villager.getPosZ() - 1.0D, villager.getPosX() + 1.0D, villager.getPosY() + 1.0D, villager.getPosZ() + 1.0D)).grow(d0, d0, d0));
-        if (!list.isEmpty()) {
-            Iterator<Entity> itr = list.iterator();
-            while (itr.hasNext()) {
-                Entity entity = itr.next();
-                if (entity instanceof EntityAmphithere && !(attacker instanceof EntityAmphithere)) {
-                    TameableEntity amphithere = (TameableEntity) entity;
-                    if (!DragonUtils.hasSameOwner(amphithere, attacker)) {
-                        if (attacker instanceof PlayerEntity) {
-                            PlayerEntity player = (PlayerEntity) attacker;
-                            if (!player.isCreative() && !amphithere.isOwner(player)) {
-                                amphithere.setAttackTarget(player);
-                            }
-                        } else {
-                            amphithere.setAttackTarget(attacker);
-                        }
-                    }
-                }
-            }
-        }
+        // No
     }
 
     public static float updateRotation(float angle, float targetAngle, float maxIncrease) {

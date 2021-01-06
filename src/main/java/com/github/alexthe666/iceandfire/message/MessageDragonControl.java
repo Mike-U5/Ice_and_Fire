@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire.message;
 import java.util.function.Supplier;
 
 import com.github.alexthe666.iceandfire.IceAndFire;
-import com.github.alexthe666.iceandfire.entity.EntityAmphithere;
 import com.github.alexthe666.iceandfire.entity.EntityDeathWorm;
 import com.github.alexthe666.iceandfire.entity.EntityDragonBase;
 import com.github.alexthe666.iceandfire.entity.EntityHippocampus;
@@ -96,12 +95,6 @@ public class MessageDragonControl {
                             EntityDeathWorm deathworm = (EntityDeathWorm) entity;
                             deathworm.setControlState(message.controlState);
                             deathworm.setPosition(message.getPosX(), message.getPosY(), message.getPosZ());
-                        } else if (entity instanceof EntityAmphithere) {
-                            EntityAmphithere amphi = (EntityAmphithere) entity;
-                            if (amphi.isOwner(player)) {
-                                amphi.setControlState(message.controlState);
-                            }
-                            amphi.setPosition(message.getPosX(), message.getPosY(), message.getPosZ());
                         }
                     }
                 }

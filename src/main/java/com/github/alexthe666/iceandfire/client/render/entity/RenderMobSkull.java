@@ -3,7 +3,6 @@ package com.github.alexthe666.iceandfire.client.render.entity;
 import java.util.Map;
 
 import com.github.alexthe666.citadel.client.model.TabulaModel;
-import com.github.alexthe666.iceandfire.client.model.ModelAmphithere;
 import com.github.alexthe666.iceandfire.client.model.ModelCockatrice;
 import com.github.alexthe666.iceandfire.client.model.ModelCyclops;
 import com.github.alexthe666.iceandfire.client.model.ModelHippogryph;
@@ -38,7 +37,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
     private ModelCockatrice cockatriceModel;
     private ModelStymphalianBird stymphalianBirdModel;
     private ModelTroll trollModel;
-    private ModelAmphithere amphithereModel;
     private ModelHydraHead hydraModel;
     private TabulaModel seaSerpentModel;
 
@@ -49,7 +47,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
         this.cockatriceModel = new ModelCockatrice();
         this.stymphalianBirdModel = new ModelStymphalianBird();
         this.trollModel = new ModelTroll();
-        this.amphithereModel = new ModelAmphithere();
         this.seaSerpentModel = (TabulaModel) seaSerpentModel;
         this.hydraModel = new ModelHydraHead(0);
     }
@@ -116,14 +113,6 @@ public class RenderMobSkull extends EntityRenderer<EntityMobSkull> {
                 trollModel.resetToDefaultPose();
                 setRotationAngles(trollModel.head, onWall ? (float) Math.toRadians(50F) : (float) Math.toRadians(-20), 0, 0);
                 trollModel.head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
-
-                break;
-            case AMPHITHERE:
-                matrixStackIn.translate(0, -0.2F, 0.7F);
-                matrixStackIn.scale(2.0F, 2.0F, 2.0F);
-                amphithereModel.resetToDefaultPose();
-                setRotationAngles(amphithereModel.Head, onWall ? (float) Math.toRadians(50F) : 0F, 0, 0);
-                amphithereModel.Head.render(matrixStackIn, ivertexbuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0F, 1.0F, 1.0F, 1.0F);
 
                 break;
             case SEASERPENT:

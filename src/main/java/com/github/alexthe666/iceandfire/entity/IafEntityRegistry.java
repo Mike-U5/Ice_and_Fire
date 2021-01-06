@@ -66,7 +66,6 @@ public class IafEntityRegistry {
     public static final EntityType<EntityMyrmexRoyal> MYRMEX_ROYAL = registerEntity(EntityType.Builder.create(EntityMyrmexRoyal::new, EntityClassification.CREATURE).size(1.9F, 1.86F), "myrmex_royal");
     public static final EntityType<EntityMyrmexQueen> MYRMEX_QUEEN = registerEntity(EntityType.Builder.create(EntityMyrmexQueen::new, EntityClassification.CREATURE).size(2.9F, 1.86F), "myrmex_queen");
     public static final EntityType<EntityMyrmexEgg> MYRMEX_EGG = registerEntity(EntityType.Builder.create(EntityMyrmexEgg::new, EntityClassification.MISC).size(0.45F, 0.55F), "myrmex_egg");
-    public static final EntityType<EntityAmphithere> AMPHITHERE = registerEntity(EntityType.Builder.create(EntityAmphithere::new, EntityClassification.CREATURE).size(2.5F, 1.25F).setTrackingRange(128), "amphithere");
     public static final EntityType<EntityAmphithereArrow> AMPHITHERE_ARROW = registerEntity(EntityType.Builder.create(EntityAmphithereArrow::new, EntityClassification.MISC).size(0.5F, 0.5F).setCustomClientFactory(EntityAmphithereArrow::new), "amphithere_arrow");
     public static final EntityType<EntitySeaSerpent> SEA_SERPENT = registerEntity(EntityType.Builder.create(EntitySeaSerpent::new, EntityClassification.CREATURE).size(0.5F, 0.5F).setTrackingRange(256), "sea_serpent");
     public static final EntityType<EntitySeaSerpentBubbles> SEA_SERPENT_BUBBLES = registerEntity(EntityType.Builder.create(EntitySeaSerpentBubbles::new, EntityClassification.MISC).size(0.9F, 0.9F).setCustomClientFactory(EntitySeaSerpentBubbles::new), "sea_serpent_bubbles");
@@ -128,7 +127,6 @@ public class IafEntityRegistry {
         GlobalEntityTypeAttributes.put(MYRMEX_QUEEN, EntityMyrmexQueen.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(MYRMEX_EGG, EntityMyrmexEgg.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(MYRMEX_SWARMER, EntityMyrmexSwarmer.bakeAttributes().func_233813_a_());
-        GlobalEntityTypeAttributes.put(AMPHITHERE, EntityAmphithere.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(SEA_SERPENT, EntitySeaSerpent.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(MOB_SKULL, EntityMobSkull.bakeAttributes().func_233813_a_());
         GlobalEntityTypeAttributes.put(DREAD_THRALL, EntityDreadThrall.bakeAttributes().func_233813_a_());
@@ -148,7 +146,6 @@ public class IafEntityRegistry {
         EntitySpawnPlacementRegistry.register(TROLL, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityTroll::canTrollSpawnOn);
         EntitySpawnPlacementRegistry.register(DREAD_LICH, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityDreadLich::canLichSpawnOn);
         EntitySpawnPlacementRegistry.register(COCKATRICE, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, EntityCockatrice::canSpawnOn);
-        EntitySpawnPlacementRegistry.register(AMPHITHERE, EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS, Heightmap.Type.MOTION_BLOCKING, EntityAmphithere::canAmphithereSpawnOn);
     }
         @SubscribeEvent
     public static void registerEntities(RegistryEvent.Register<EntityType<?>> event) {
@@ -195,10 +192,6 @@ public class IafEntityRegistry {
         if (IafConfig.spawnCockatrices && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.cockatriceBiomes, biome)) {
             event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(IafEntityRegistry.COCKATRICE, IafConfig.cockatriceSpawnRate, 1, 2));
             LOADED_ENTITIES.put("COCKATRICE", true);
-        }
-        if (IafConfig.spawnAmphitheres && IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.amphithereBiomes, biome)) {
-            event.getSpawns().getSpawner(EntityClassification.CREATURE).add(new MobSpawnInfo.Spawners(IafEntityRegistry.AMPHITHERE, IafConfig.amphithereSpawnRate, 1, 3));
-            LOADED_ENTITIES.put("AMPHITHERE", true);
         }
         if (IafConfig.spawnTrolls && (
     		IAFBiomeUtil.parseListForBiomeCheck(BiomeConfig.forestTrollBiomes, biome) ||
